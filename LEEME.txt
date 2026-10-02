@@ -1,0 +1,43 @@
+LIVEPULSE — MAPA DE VÍNCULOS
+============================
+
+Cada botón de la página descarga UN archivo con UN nombre fijo.
+Si el nombre del archivo, el href de index.html y el campo de enlaces.json
+coinciden, el botón está vinculado. Si solo sustituyes el archivo y
+conservas el nombre, no edites nada más.
+
+BOTÓN                         ARCHIVO                                      CAMPO EN enlaces.json
+Descargar para Windows        descargas/windows/LivePulse-Setup.exe        windows.archivo
+Versión portable              descargas/windows/LivePulse-Portable.exe     windowsPortable.archivo
+Descargar APK                 descargas/android/LivePulse.apk              android.archivo
+Logo de la página             img/logo.png                                 (no está en enlaces.json)
+Icono de la pestaña           img/favicon.png                              (no está en enlaces.json)
+
+CÓMO SE ARMA EL ENLACE
+----------------------
+1. sitio.js lee enlaces.json, en la raíz de este sitio.
+2. Si el campo "url" está vacío, el botón apunta a:
+     descargas/windows/ + windows.archivo
+     descargas/windows/ + windowsPortable.archivo
+     descargas/android/ + android.archivo
+3. El campo "archivo" es SOLO el nombre. Sin carpetas, sin .. y sin barras.
+4. Si "url" empieza por https:// el botón usa esa dirección y el archivo
+   de la carpeta se ignora. Sirve cuando el .exe pesa 100 MB o más.
+5. index.html repite las mismas rutas para que la descarga funcione
+   aunque el navegador no ejecute JavaScript. Si cambias un nombre,
+   cámbialo en index.html (los href y download de ese botón) y en enlaces.json.
+
+NÚMERO DE VERSIÓN QUE SE VE EN LA PÁGINA
+----------------------------------------
+Está en enlaces.json, campo "version". Ejemplo: "1.0.1"
+No forma parte del nombre del archivo.
+
+INSTRUCCIONES POR CARPETA
+-------------------------
+descargas/LEEME.txt            mapa de las dos descargas
+descargas/windows/LEEME.txt    cómo colocar el instalador y el portable
+descargas/android/LEEME.txt    cómo colocar la APK
+img/LEEME.txt                  cómo cambiar el logo y el icono
+README.md                      cómo subir ESTE sitio a GitHub y Netlify
+
+No subas a GitHub el proyecto LivePulse completo. Solo esta carpeta sitio.

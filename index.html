@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descarga LivePulse para Windows y Android. Lee tu live de BIGO, agradece en voz alta y suena los regalos.">
+  <meta name="theme-color" content="#070b12">
+  <title>LivePulse — Descargar para Windows y Android</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!--
+    Descargas. Si conservas estos nombres, no edites esta página:
+      descargas/windows/LivePulse-Setup.exe
+      descargas/windows/LivePulse-Portable.exe
+      descargas/android/LivePulse.apk
+    La fuente de verdad al publicar es enlaces.json.
+    Instrucciones: LEEME.txt de cada carpeta y README.md
+  -->
+  <header>
+    <a class="brand" href="#inicio">
+      <img src="img/favicon.png" alt="" width="36" height="36">
+      LivePulse
+    </a>
+    <nav>
+      <a href="#descargas">Descargas</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#que-hace">Qué hace</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="inicio">
+    <section class="hero">
+      <img class="hero-logo" src="img/logo.png" alt="LivePulse">
+      <p class="eyebrow">Para tu live de BIGO</p>
+      <h1>LivePulse</h1>
+      <svg class="wave" viewBox="0 0 240 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="pulso" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2bb8ff"/>
+            <stop offset="1" stop-color="#9aabff"/>
+          </linearGradient>
+        </defs>
+        <polyline fill="none" stroke="url(#pulso)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="0,16 28,16 40,7 52,25 64,16 96,16 108,5 120,27 132,16 168,16 180,9 192,23 204,16 240,16"/>
+      </svg>
+      <p class="lead">Lee tu live, agradece en voz alta y haz sonar los regalos. En el PC también mueve tus animaciones de OBS.</p>
+      <p class="trial">Cuenta nueva: 10 días gratis. Después, un pago de 30 días por S/ 16 con Mercado Pago, desde la app. No es una suscripción.</p>
+      <div class="actions">
+        <a class="btn btn-primary" data-enlace="windows" href="descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar para Windows</a>
+        <a class="btn btn-ghost" data-enlace="android" href="descargas/android/LivePulse.apk" download="LivePulse.apk">Descargar APK</a>
+      </div>
+    </section>
+
+    <section id="descargas">
+      <h2>Descargas</h2>
+      <p class="section-lead">Versión <span data-version>1.0.0</span></p>
+      <div class="cards">
+        <article class="card">
+          <p class="kicker">PC</p>
+          <h3>Windows</h3>
+          <p>Instalador con accesos directos. La versión portable es un solo archivo, sin instalar.</p>
+          <ul>
+            <li>Windows 10 u 11, 64 bits</li>
+            <li>Google Chrome o Microsoft Edge</li>
+            <li>OBS Studio solo si usas animaciones</li>
+          </ul>
+          <a class="btn btn-primary" data-enlace="windows" href="descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar instalador</a>
+          <p class="meta"><span data-tamano="windows"></span> <span class="ruta" data-ruta="windows">LivePulse-Setup.exe</span></p>
+          <a class="link" data-enlace="windowsPortable" href="descargas/windows/LivePulse-Portable.exe" download="LivePulse-Portable.exe">Versión portable</a>
+          <p class="meta"><span data-tamano="windowsPortable"></span> <span class="ruta" data-ruta="windowsPortable">LivePulse-Portable.exe</span></p>
+        </article>
+        <article class="card">
+          <p class="kicker">Teléfono</p>
+          <h3>Android</h3>
+          <p>El teléfono trabaja solo. No hace falta dejar el PC encendido ni instalar la app de Windows.</p>
+          <ul>
+            <li>Se instala este APK. No está en Play Store</li>
+            <li>Usa las voces y los sonidos del teléfono</li>
+            <li>La misma cuenta entra en el PC y en el celular</li>
+          </ul>
+          <a class="btn btn-primary" data-enlace="android" href="descargas/android/LivePulse.apk" download="LivePulse.apk">Descargar APK</a>
+          <p class="meta"><span data-tamano="android"></span> <span class="ruta" data-ruta="android">LivePulse.apk</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="instalar">
+      <h2>Instalar</h2>
+      <div class="steps">
+        <article class="step">
+          <h3>En Windows</h3>
+          <ol>
+            <li>Descarga el instalador y ábrelo.</li>
+            <li>Si Windows muestra “protegió tu PC”, pulsa Más información y después Ejecutar de todas formas. El instalador no lleva una firma de pago.</li>
+            <li>Termina el asistente. Quedan iconos en el escritorio y en Inicio.</li>
+            <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
+          </ol>
+          <p class="note">La versión portable no se instala. Al abrirla crea la carpeta LivePulse-Data al lado del archivo. Puedes llevar las dos en un USB.</p>
+        </article>
+        <article class="step">
+          <h3>En Android</h3>
+          <ol>
+            <li>Abre esta página en el teléfono y descarga el APK.</li>
+            <li>Ábrelo desde el aviso o desde Descargas.</li>
+            <li>Si el teléfono lo pide, permite instalar aplicaciones desde el navegador o desde Archivos, solo para esta instalación.</li>
+            <li>Abre LivePulse, entra con tu cuenta y escribe tu ID de BIGO.</li>
+            <li>Si pregunta por la batería, permite que siga activa. Así lee el live con la pantalla apagada. Si la cierras desde las apps recientes, se detiene.</li>
+          </ol>
+          <p class="note">El ID de BIGO queda ligado a tu cuenta durante 30 días. El mismo correo sirve en el PC y en el teléfono. La voz y los sonidos se guardan en cada aparato.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="que-hace">
+      <h2>Qué hace</h2>
+      <div class="feats">
+        <article class="feat">
+          <h3>El live</h3>
+          <p>Lee el chat, los regalos, los seguidores nuevos y las veces que comparten.</p>
+        </article>
+        <article class="feat">
+          <h3>La voz</h3>
+          <p>Agradece con las voces que ya tienes en el PC o en el teléfono.</p>
+        </article>
+        <article class="feat">
+          <h3>Los regalos</h3>
+          <p>Puede sonar un efecto cada vez que llega un regalo. Un combo cuenta como uno.</p>
+        </article>
+        <article class="feat">
+          <h3>OBS</h3>
+          <p>En Windows lanza animaciones en OBS. En el teléfono no hace falta OBS.</p>
+        </article>
+        <article class="feat">
+          <h3>El teléfono solo</h3>
+          <p>La APK no depende de LivePulse en el PC. Entra a BIGO desde el celular.</p>
+        </article>
+        <article class="feat">
+          <h3>La cuenta</h3>
+          <p>10 días gratis al registrarte. El pago de 30 días se hace dentro de la app.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>LivePulse</strong> · versión <span data-version>1.0.0</span></p>
+      <p>Windows 10 u 11 de 64 bits, con Chrome o Edge. Android mediante el APK de esta página.</p>
+    </div>
+  </footer>
+  <script src="sitio.js"></script>
+</body>
+</html>

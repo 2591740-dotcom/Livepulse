@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Los .exe y el .apk SÍ se suben. Son la descarga.
+# No agregues aquí LivePulse-Setup.exe, LivePulse-Portable.exe ni LivePulse.apk.

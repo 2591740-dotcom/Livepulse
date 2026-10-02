@@ -1,0 +1,25 @@
+DESCARGAS — QUÉ CARPETA USA CADA BOTÓN
+======================================
+
+windows/   lo usa el botón "Descargar para Windows" y el enlace "Versión portable"
+android/   lo usa el botón "Descargar APK"
+
+No mezcles los archivos. Un .exe en android/ no lo encuentra el botón.
+Un .apk en windows/ tampoco.
+
+Los nombres que la página espera HOY, y que ya deben estar en su carpeta:
+
+  windows/LivePulse-Setup.exe
+  windows/LivePulse-Portable.exe
+  android/LivePulse.apk
+
+Esos tres nombres salen de ../enlaces.json
+Abre el LEEME.txt de cada carpeta antes de reemplazar un archivo.
+No renombres estas carpetas. sitio.js las tiene escritas así:
+
+  windows          →  descargas/windows/
+  windowsPortable  →  descargas/windows/
+  android          →  descargas/android/
+
+Si cambiaras el nombre de una carpeta tendrías que editar sitio.js,
+index.html y este archivo. No lo hagas.

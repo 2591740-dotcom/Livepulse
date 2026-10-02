@@ -1,0 +1,53 @@
+ANDROID — CÓMO VINCULAR LA APK
+===============================
+
+La página no busca "el apk más nuevo". El botón apunta a un nombre fijo
+dentro de ESTA carpeta.
+
+Botón "Descargar APK"
+  Nombre exacto del archivo:     LivePulse.apk
+  Ruta dentro del sitio:         descargas/android/LivePulse.apk
+  href en index.html:            descargas/android/LivePulse.apk
+  Campo en enlaces.json:         "android" → "archivo": "LivePulse.apk"
+  Campo "url":                   déjalo en "" para usar el archivo de esta carpeta
+
+Si el archivo, el href y el campo "archivo" dicen LivePulse.apk, el botón
+descarga este APK. El texto de versión de la página es el campo "version"
+de enlaces.json. No hace falta que el apk lleve el número en el nombre.
+
+CÓMO REEMPLAZAR LA APK
+----------------------
+En el proyecto LivePulse, la APK que se comparte está en:
+
+  LIVEPULSE MOBILE\LIVEPULSE-MOBILE.apk
+
+Se copia aquí con OTRO nombre: LivePulse.apk
+
+Mientras esta carpeta sitio siga dentro del proyecto, ábrela en PowerShell:
+
+  Copy-Item -LiteralPath "..\..\..\LIVEPULSE MOBILE\LIVEPULSE-MOBILE.apk" -Destination ".\LivePulse.apk" -Force
+
+Si el sitio ya está en su propio repositorio, copia ese apk a esta carpeta
+y renómbralo a LivePulse.apk. Pisa el archivo viejo.
+
+Después, en la carpeta sitio:
+
+  git add descargas/android/LivePulse.apk enlaces.json
+  git commit -m "Actualiza la APK"
+  git push
+
+Netlify publica solo. En el teléfono, abre la página y descarga de nuevo.
+No edites index.html si el nombre sigue siendo LivePulse.apk.
+
+SI ALGÚN DÍA EL APK PESA 100 MB O MÁS
+-------------------------------------
+GitHub no lo acepta. No uses Git LFS.
+Súbelo en GitHub → Releases y pega el enlace https en android.url
+dentro de enlaces.json. Mira el mismo método en
+descargas/windows/LEEME.txt
+
+El botón Add file de la web de GitHub corta en 25 MB.
+Con git push el tope del archivo es 100 MB. Esta APK entra de sobra.
+
+NO pongas aquí los exe de Windows. Esos van en descargas/windows/
+con los nombres LivePulse-Setup.exe y LivePulse-Portable.exe.

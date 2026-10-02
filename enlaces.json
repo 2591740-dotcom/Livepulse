@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "windows": {
+    "archivo": "LivePulse-Setup.exe",
+    "url": ""
+  },
+  "windowsPortable": {
+    "archivo": "LivePulse-Portable.exe",
+    "url": ""
+  },
+  "android": {
+    "archivo": "LivePulse.apk",
+    "url": ""
+  }
+}
