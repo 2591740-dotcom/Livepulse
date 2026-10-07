@@ -1,0 +1,23 @@
+IMÁGENES — CÓMO LAS USA LA PÁGINA
+==================================
+
+La página apunta a estos nombres. Si los cambias, también cambia el src
+en index.html. Si conservas el nombre, solo reemplaza el archivo.
+
+1) img/logo.png
+   Dónde se ve: imagen grande del inicio.
+   En index.html: <img class="hero-logo" src="img/logo.png" alt="LivePulse">
+   El fondo de esta página es oscuro (#070b12). Un logo con fondo oscuro
+   se integra. Uno con fondo blanco se verá como un recuadro.
+
+2) img/favicon.png
+   Dónde se ve: icono de la pestaña del navegador y la marca pequeña
+   de la barra de arriba.
+   En index.html: <link rel="icon" href="img/favicon.png">
+   y <img src="img/favicon.png" alt="" width="36" height="36">
+   Conviene que sea cuadrado y pequeño.
+
+Estos archivos no pasan por enlaces.json. No hace falta un commit aparte
+de Netlify: al hacer push, el sitio se actualiza solo.
+
+No pongas en esta carpeta el exe ni el apk.

@@ -1,0 +1,67 @@
+WINDOWS — CÓMO VINCULAR EL INSTALADOR Y EL PORTABLE
+======================================================
+
+La página no busca "el exe más nuevo". Cada botón apunta a un nombre fijo
+dentro de ESTA carpeta.
+
+1) Botón "Descargar para Windows" y "Descargar instalador"
+   Nombre exacto del archivo:     LivePulse-Setup.exe
+   Ruta dentro del sitio:         descargas/windows/LivePulse-Setup.exe
+   href en index.html:            descargas/windows/LivePulse-Setup.exe
+   Campo en enlaces.json:         "windows" → "archivo": "LivePulse-Setup.exe"
+   Campo "url":                   déjalo en "" para usar el archivo de esta carpeta
+
+2) Enlace "Versión portable"
+   Nombre exacto del archivo:     LivePulse-Portable.exe
+   Ruta dentro del sitio:         descargas/windows/LivePulse-Portable.exe
+   href en index.html:            descargas/windows/LivePulse-Portable.exe
+   Campo en enlaces.json:         "windowsPortable" → "archivo": "LivePulse-Portable.exe"
+   Campo "url":                   déjalo en ""
+
+Si esos tres textos coinciden (archivo, href y campo archivo), el botón
+descarga este archivo. El número de versión que se lee en la página es
+otro campo: "version" en enlaces.json. No lo pongas en el nombre del exe.
+
+CÓMO REEMPLAZAR LA APP
+----------------------
+En el proyecto LivePulse, EMPAQUETAR.bat deja los archivos en dist\
+
+  dist\LivePulse-Setup-1.0.0.exe       → aquí se llama LivePulse-Setup.exe
+  dist\LivePulse-Portable-1.0.0.exe    → aquí se llama LivePulse-Portable.exe
+
+Mientras esta carpeta sitio siga dentro del proyecto, ábrela en PowerShell
+y ejecuta (cambia 1.0.0 si el archivo nuevo trae otro número):
+
+  Copy-Item -LiteralPath "..\..\..\dist\LivePulse-Setup-1.0.0.exe" -Destination ".\LivePulse-Setup.exe" -Force
+  Copy-Item -LiteralPath "..\..\..\dist\LivePulse-Portable-1.0.0.exe" -Destination ".\LivePulse-Portable.exe" -Force
+
+Si el sitio ya está en su propio repositorio, copia el exe a esta carpeta
+y renómbralo al nombre exacto de arriba. Pisa el archivo viejo.
+
+Después, en la carpeta sitio:
+
+  git add descargas/windows/LivePulse-Setup.exe descargas/windows/LivePulse-Portable.exe enlaces.json
+  git commit -m "Actualiza la app de Windows"
+  git push
+
+Netlify vuelve a publicar solo. Abre el botón y comprueba el tamaño.
+No edites index.html si el nombre del archivo no cambió.
+
+SI EL EXE PESA 100 MB O MÁS
+---------------------------
+GitHub rechaza ese archivo. No uses Git LFS: Netlify gratis publicaría
+un puntero de texto y la descarga llegaría rota.
+
+1. En el repositorio de GitHub: Releases → Draft a new release.
+2. Sube ahí el exe.
+3. Copia el enlace directo del archivo. Se parece a:
+   https://github.com/TU-USUARIO/TU-REPO/releases/download/v1.0.1/LivePulse-Setup.exe
+4. Pégalo en enlaces.json, en windows.url o windowsPortable.url.
+5. Tiene que empezar por https://
+6. Deja "archivo" como está.
+7. Haz commit y push solo de enlaces.json.
+
+El mismo tope: GitHub avisa desde 50 MB y bloquea desde 100 MB.
+La web de GitHub (botón Add file) corta en 25 MB. Estos exe se suben con git push.
+
+NO pongas aquí el APK. Ese va en descargas/android/ con el nombre LivePulse.apk.
