@@ -251,7 +251,9 @@ h2 {
 
 .steps { margin-top: 8px; }
 
-.step, .feat { padding: 18px 18px 8px; }
+.step { padding: 18px 18px 8px; }
+.feat { padding: 18px; }
+.feat strong { color: var(--text); font-weight: 700; }
 
 .step ol { margin-bottom: 12px; }
 
