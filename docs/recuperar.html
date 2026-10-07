@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cambiar contraseña — LivePulse</title>
+  <style>
+    body { margin: 0; background: #f4f7fb; color: #142033; font-family: "Segoe UI", system-ui, sans-serif; }
+    main { max-width: 420px; margin: 24px auto; background: #fff; border: 1px solid #d5e0ea; border-radius: 16px; padding: 22px; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    p { color: #3d5166; line-height: 1.45; }
+    label { display: block; margin: 12px 0 6px; font-size: 13px; }
+    input { width: 100%; box-sizing: border-box; min-height: 44px; border-radius: 10px; border: 1px solid #b7c6d4; padding: 8px 12px; font-size: 16px; }
+    button { width: 100%; margin-top: 16px; min-height: 46px; border: 0; border-radius: 12px; background: #1688c9; color: #fff; font-weight: 700; font-size: 16px; }
+    .ok { color: #0d7a45; }
+    .bad { color: #b42318; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Cambiar contraseña</h1>
+    <p id="intro">Escribe la contraseña nueva dos veces. Tu ID de BIGO sigue ligado a la cuenta.</p>
+    <form id="form">
+      <label for="pass">Contraseña nueva</label>
+      <input id="pass" type="password" autocomplete="new-password" minlength="6" required>
+      <label for="again">Confirmar contraseña</label>
+      <input id="again" type="password" autocomplete="new-password" minlength="6" required>
+      <button type="submit">Guardar contraseña</button>
+    </form>
+    <p id="msg"></p>
+  </main>
+  <script>
+    var SUPABASE = "https://klthmrjtjcufwiodiqjm.supabase.co";
+    var ANON = "sb_publishable_gbPOfYYXo67EY6dD19j87w_btIwfCRH";
+    var msg = document.getElementById("msg");
+    var form = document.getElementById("form");
+    var intro = document.getElementById("intro");
+    function say(text, ok) {
+      msg.textContent = text || "";
+      msg.className = ok ? "ok" : "bad";
+    }
+    function readToken() {
+      var hash = new URLSearchParams(location.hash.replace(/^#/, ""));
+      var query = new URLSearchParams(location.search);
+      return {
+        access: hash.get("access_token") || "",
+        type: hash.get("type") || query.get("type") || "",
+        tokenHash: query.get("token_hash") || hash.get("token_hash") || "",
+        errorCode: hash.get("error_code") || query.get("error_code") || ""
+      };
+    }
+    var opened = readToken();
+    if (opened.access || opened.tokenHash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    if (opened.errorCode) {
+      form.hidden = true;
+      intro.textContent = "Este enlace ya no sirve. Vuelve a LivePulse, pulsa Olvidé la contraseña y pide un correo nuevo. Ábrelo una sola vez.";
+    } else if (!opened.access && !opened.tokenHash) {
+      form.hidden = true;
+      intro.textContent = "Abre el enlace del correo más reciente para cambiar la contraseña.";
+    }
+    function sessionToken() {
+      if (opened.access && (!opened.type || opened.type === "recovery")) return Promise.resolve(opened.access);
+      if (!opened.tokenHash) return Promise.resolve("");
+      return fetch(SUPABASE + "/auth/v1/verify", {
+        method: "POST",
+        headers: { apikey: ANON, Authorization: "Bearer " + ANON, "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "recovery", token_hash: opened.tokenHash })
+      }).then(function (res) { return res.json(); }).then(function (data) {
+        return data.access_token || (data.session && data.session.access_token) || "";
+      }).catch(function () { return ""; });
+    }
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var pass = document.getElementById("pass").value;
+      var again = document.getElementById("again").value;
+      if (pass.length < 6) { say("La contraseña debe tener al menos 6 caracteres"); return; }
+      if (pass !== again) { say("Las dos contraseñas no coinciden"); return; }
+      say("Guardando…", true);
+      sessionToken().then(function (token) {
+        if (!token) { say("Este enlace ya no sirve. Pide otro correo desde la app."); return; }
+        return fetch(SUPABASE + "/auth/v1/user", {
+          method: "PUT",
+          headers: { apikey: ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" },
+          body: JSON.stringify({ password: pass })
+        }).then(function (res) {
+          if (!res.ok) { say("No se pudo guardar la contraseña. Pide otro correo desde la app."); return; }
+          form.hidden = true;
+          intro.textContent = "Listo. Vuelve a LivePulse y entra con esta contraseña. Tu ID de BIGO sigue ligado a la cuenta.";
+          say("", true);
+        });
+      }).catch(function () {
+        say("No se pudo guardar la contraseña. Revisa tu conexión.");
+      });
+    });
+  </script>
+</body>
+</html>
