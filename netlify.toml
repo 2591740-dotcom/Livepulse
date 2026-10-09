@@ -4,6 +4,32 @@
 [build]
   publish = "."
 
+# Los programas viven en GitHub. Estas redirecciones evitan que Netlify
+# entregue el archivo si alguien abre la ruta vieja del sitio.
+[[redirects]]
+  from = "/descargas/windows/LivePulse-Setup.exe"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Setup.exe"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/descargas/windows/LivePulse-Portable.exe"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Portable.exe"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/descargas/mac/LivePulse.dmg"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/mac/LivePulse.dmg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/descargas/android/LivePulse.apk"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/android/LivePulse.apk"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

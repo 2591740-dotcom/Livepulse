@@ -57,7 +57,7 @@
     for (var r = 0; r < rutas.length; r++) {
       rutas[r].textContent = info ? info.nombre || info.href : "sin archivo";
     }
-    if (info && !info.externo) medir(clave, info.href);
+    if (info) medir(clave, info.href);
   }
 
   function medir(clave, href) {

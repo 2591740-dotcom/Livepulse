@@ -24,7 +24,9 @@ CÓMO SE ARMA EL ENLACE
      descargas/mac/ + mac.archivo
 3. El campo "archivo" es SOLO el nombre. Sin carpetas, sin .. y sin barras.
 4. Si "url" empieza por https:// el botón usa esa dirección y el archivo
-   de la carpeta se ignora. Sirve cuando el .exe pesa 100 MB o más.
+   de la carpeta se ignora. Los cuatro programas usan la URL de GitHub
+   para que la descarga no salga de Netlify y no gaste créditos. No dejes
+   esos "url" vacíos.
 5. index.html repite las mismas rutas para que la descarga funcione
    aunque el navegador no ejecute JavaScript. Si cambias un nombre,
    cámbialo en index.html (los href y download de ese botón) y en enlaces.json.

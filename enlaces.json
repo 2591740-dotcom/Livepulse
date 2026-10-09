@@ -2,11 +2,11 @@
   "version": "2.0.3",
   "windows": {
     "archivo": "LivePulse-Setup.exe",
-    "url": ""
+    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Setup.exe"
   },
   "windowsPortable": {
     "archivo": "LivePulse-Portable.exe",
-    "url": ""
+    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Portable.exe"
   },
   "android": {
     "archivo": "LivePulse.apk",
@@ -14,6 +14,6 @@
   },
   "mac": {
     "archivo": "LivePulse.dmg",
-    "url": ""
+    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/mac/LivePulse.dmg"
   }
 }
