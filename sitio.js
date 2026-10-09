@@ -76,7 +76,7 @@
       return res.json();
     })
     .then(function (data) {
-      var version = typeof data.version === "string" && data.version.trim() ? data.version.trim() : "2.0.0";
+      var version = typeof data.version === "string" && data.version.trim() ? data.version.trim() : "2.0.1";
       var marcas = document.querySelectorAll("[data-version]");
       for (var i = 0; i < marcas.length; i++) marcas[i].textContent = version;
       ["windows", "windowsPortable", "android"].forEach(function (clave) {
