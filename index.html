@@ -45,8 +45,12 @@
         </defs>
         <polyline fill="none" stroke="url(#pulso)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="0,16 28,16 40,7 52,25 64,16 96,16 108,5 120,27 132,16 168,16 180,9 192,23 204,16 240,16"/>
       </svg>
-      <p class="lead">Tu asistente para el live. Lee el chat en voz alta, agradece los regalos y pone en YouTube la canción que pide la gente. En el PC también mueve tus animaciones de OBS.</p>
-      <p class="trial">Cuenta nueva: 10 días gratis. Después son 30 días con un solo pago desde la app. No es una suscripción. En Perú el precio es de 16 soles, por Mercado Pago. En otros países son 6 dólares, y se puede pagar por PayPal o Binance.</p>
+      <p class="lead">Lee el chat en voz alta, agradece los regalos y pone en YouTube la canción que pide la gente. En Windows y en Mac también mueve tus animaciones de OBS.</p>
+      <ul class="facts">
+        <li><strong>10 días gratis</strong><span>Al crear la cuenta</span></li>
+        <li><strong>Un solo pago</strong><span>30 días. No es suscripción</span></li>
+        <li><strong>16 soles o 6 dólares</strong><span>Mercado Pago, PayPal o Binance</span></li>
+      </ul>
       <div class="actions">
         <a class="btn btn-primary" data-enlace="windows" href="descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar para Windows</a>
         <a class="btn btn-ghost" data-enlace="mac" href="descargas/mac/LivePulse.dmg" download="LivePulse.dmg">Descargar para Mac</a>
@@ -55,59 +59,76 @@
     </section>
 
     <section id="descargas">
-      <h2>Descargas</h2>
-      <p class="section-lead">Windows, Mac y Android <span data-version>2.0.3</span>.</p>
+      <div class="section-head">
+        <h2>Descargas</h2>
+        <p class="section-lead">Versión <span data-version>2.0.3</span>. Elige tu equipo.</p>
+      </div>
       <div class="cards">
         <article class="card">
-          <p class="kicker">PC</p>
+          <p class="kicker">Windows 10 y 11</p>
           <h3>Windows</h3>
-          <p>El asistente completo: voz, regalos, YouTube desde el chat y animaciones de OBS.</p>
+          <p>Voz, regalos, YouTube desde el chat y animaciones de OBS.</p>
           <ul>
             <li>Windows 10 u 11, 64 bits</li>
             <li>Google Chrome o Microsoft Edge</li>
             <li>OBS Studio solo si usas animaciones</li>
-            <li>La voz lee la letra de un emoji y salta los que van antes del nombre</li>
-            <li>El volumen de YouTube no salta y se conserva en la siguiente canción</li>
-            <li>Al terminar un pedido pasa al siguiente. Sonar ya sigue cortando la cola</li>
-            <li>La ventana de YouTube desacoplada muestra el video completo y centrado</li>
-            <li>La versión se ve en letras pequeñas, abajo a la izquierda</li>
-            <li>Actualizar el portable reemplaza ese mismo archivo. El instalador actualiza la copia de la PC</li>
           </ul>
-          <a class="btn btn-primary" data-enlace="windows" href="descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar instalador</a>
-          <p class="meta"><span data-tamano="windows"></span> <span class="ruta" data-ruta="windows">LivePulse-Setup.exe</span></p>
-          <a class="link" data-enlace="windowsPortable" href="descargas/windows/LivePulse-Portable.exe" download="LivePulse-Portable.exe">Versión portable</a>
-          <p class="meta"><span data-tamano="windowsPortable"></span> <span class="ruta" data-ruta="windowsPortable">LivePulse-Portable.exe</span></p>
+          <div class="card-foot">
+            <a class="btn btn-primary" data-enlace="windows" href="descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar instalador</a>
+            <p class="meta"><span data-tamano="windows"></span> <span class="ruta" data-ruta="windows">LivePulse-Setup.exe</span></p>
+            <div class="card-extra">
+              <a class="link" data-enlace="windowsPortable" href="descargas/windows/LivePulse-Portable.exe" download="LivePulse-Portable.exe">Versión portable</a>
+              <p class="meta"><span data-tamano="windowsPortable"></span> <span class="ruta" data-ruta="windowsPortable">LivePulse-Portable.exe</span></p>
+            </div>
+          </div>
         </article>
         <article class="card">
-          <p class="kicker">Teléfono</p>
-          <h3>Android</h3>
-          <p>El mismo asistente en el bolsillo: lee el live, agradece y pone YouTube. No hace falta dejar el PC encendido. La versión se ve en letras pequeñas, abajo a la izquierda. En 2.0.2 el chat sigue llegando y la voz no se corta al apagar YouTube.</p>
-          <ul>
-            <li>Se instala este APK. No está en Play Store</li>
-            <li>Usa las voces y los sonidos del teléfono</li>
-            <li>La misma cuenta entra en el PC y en el celular</li>
-          </ul>
-          <a class="btn btn-primary" data-enlace="android" href="descargas/android/LivePulse.apk" download="LivePulse.apk">Descargar APK</a>
-          <p class="meta"><span data-tamano="android"></span> <span class="ruta" data-ruta="android">LivePulse.apk</span></p>
-        </article>
-        <article class="card">
-          <p class="kicker">Mac</p>
+          <p class="kicker">macOS</p>
           <h3>Mac</h3>
-          <p>El asistente en el Mac: voz, regalos y YouTube desde el chat. La versión se ve en letras pequeñas, abajo a la izquierda.</p>
+          <p>Voz, regalos y YouTube desde el chat. La primera apertura pide un clic derecho.</p>
           <ul>
             <li>Mac Intel, o Apple Silicon con Rosetta</li>
             <li>Google Chrome, para leer el live de BIGO</li>
-            <li>La primera vez se abre con clic derecho y Abrir</li>
             <li>OBS Studio solo si usas animaciones</li>
           </ul>
-          <a class="btn btn-primary" data-enlace="mac" href="descargas/mac/LivePulse.dmg" download="LivePulse.dmg">Descargar para Mac</a>
-          <p class="meta"><span data-tamano="mac"></span> <span class="ruta" data-ruta="mac">LivePulse.dmg</span></p>
+          <div class="card-foot">
+            <a class="btn btn-primary" data-enlace="mac" href="descargas/mac/LivePulse.dmg" download="LivePulse.dmg">Descargar para Mac</a>
+            <p class="meta"><span data-tamano="mac"></span> <span class="ruta" data-ruta="mac">LivePulse.dmg</span></p>
+            <div class="card-extra"></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="kicker">Android</p>
+          <h3>Teléfono</h3>
+          <p>El mismo asistente en el bolsillo. No hace falta dejar el PC encendido.</p>
+          <ul>
+            <li>Se instala este APK. No está en Play Store</li>
+            <li>Usa las voces y los sonidos del teléfono</li>
+            <li>La misma cuenta entra en el PC, en el Mac y en el celular</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-primary" data-enlace="android" href="descargas/android/LivePulse.apk" download="LivePulse.apk">Descargar APK</a>
+            <p class="meta"><span data-tamano="android"></span> <span class="ruta" data-ruta="android">LivePulse.apk</span></p>
+            <div class="card-extra"></div>
+          </div>
         </article>
       </div>
+      <h3 class="release-title">En esta versión</h3>
+      <ul class="release">
+        <li>La voz lee la letra de un emoji y salta los que van antes del nombre.</li>
+        <li>El volumen de YouTube no salta y se conserva en la siguiente canción.</li>
+        <li>Al terminar un pedido pasa al siguiente. Sonar corta la canción actual y sigue la cola.</li>
+        <li>La ventana de YouTube desacoplada muestra el video completo y centrado.</li>
+        <li>En Android el chat sigue llegando y la voz no se corta al apagar YouTube.</li>
+        <li>La versión se ve abajo a la izquierda. El portable se reemplaza. El instalador actualiza la copia de la PC.</li>
+      </ul>
     </section>
 
     <section id="instalar">
-      <h2>Instalar</h2>
+      <div class="section-head">
+        <h2>Instalar</h2>
+        <p class="section-lead">El mismo orden: Windows, Mac y Android.</p>
+      </div>
       <div class="steps">
         <article class="step">
           <h3>En Windows</h3>
@@ -120,6 +141,16 @@
           <p class="note">La versión portable no se instala. Al abrirla crea la carpeta LivePulse-Data al lado del archivo. Puedes llevar las dos en un USB.</p>
         </article>
         <article class="step">
+          <h3>En Mac</h3>
+          <ol>
+            <li>Descarga LivePulse.dmg y ábrelo.</li>
+            <li>Arrastra LivePulse a la carpeta Aplicaciones.</li>
+            <li>La primera vez, haz clic derecho en LivePulse y elige Abrir. macOS avisa porque la app no lleva una firma de pago. Pulsa Abrir.</li>
+            <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
+          </ol>
+          <p class="note">Sirve en Mac Intel y en Apple Silicon con Rosetta. Hace falta Google Chrome para leer el live. OBS Studio solo si usas animaciones.</p>
+        </article>
+        <article class="step">
           <h3>En Android</h3>
           <ol>
             <li>Abre esta página en el teléfono y descarga el APK.</li>
@@ -128,23 +159,17 @@
             <li>Abre LivePulse, entra con tu cuenta y escribe tu ID de BIGO.</li>
             <li>Si pregunta por la batería, permite que siga activa. Así lee el live con la pantalla apagada. Si la cierras desde las apps recientes, se detiene.</li>
           </ol>
-          <p class="note">El ID de BIGO queda ligado a tu cuenta durante 30 días. El mismo correo sirve en el PC, en el Mac y en el teléfono. La voz y los sonidos se guardan en cada aparato.</p>
-        </article>
-        <article class="step">
-          <h3>En Mac</h3>
-          <ol>
-            <li>Descarga LivePulse.dmg y ábrelo.</li>
-            <li>Arrastra LivePulse a la carpeta Aplicaciones.</li>
-            <li>La primera vez, haz clic derecho en LivePulse y elige Abrir. macOS avisa porque la app no lleva una firma de pago. Pulsa Abrir.</li>
-            <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
-          </ol>
-          <p class="note">Sirve en Mac Intel y en Apple Silicon con Rosetta. Hace falta Google Chrome para leer el live de BIGO. OBS Studio solo si usas animaciones.</p>
+          <p class="note">No está en Play Store. El APK de esta página es la instalación.</p>
         </article>
       </div>
+      <p class="note shared-note">El ID de BIGO queda ligado a tu cuenta durante 30 días. El mismo correo sirve en Windows, en el Mac y en el teléfono. La voz y los sonidos se guardan en cada aparato.</p>
     </section>
 
     <section id="que-hace">
-      <h2>Qué hace el asistente</h2>
+      <div class="section-head">
+        <h2>Qué hace el asistente</h2>
+        <p class="section-lead">Chat, regalos, música y la cuenta.</p>
+      </div>
       <div class="feats">
         <article class="feat">
           <h3>El chat</h3>
@@ -188,7 +213,7 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>LivePulse</strong> · asistente en vivo para BIGO · Android, Mac y Windows <span data-version>2.0.3</span></p>
+      <p><strong>LivePulse</strong> · asistente en vivo para BIGO · Windows, Mac y Android <span data-version>2.0.3</span></p>
       <p>Windows 10 u 11 de 64 bits, con Chrome o Edge. Mac Intel, o Apple Silicon con Rosetta, con Chrome. Android mediante el APK de esta página.</p>
     </div>
   </footer>
