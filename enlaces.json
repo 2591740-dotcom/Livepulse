@@ -2,11 +2,11 @@
   "version": "2.0.3",
   "windows": {
     "archivo": "LivePulse-Setup.exe",
-    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/62ea901c185fcab768dd0f094eec40fe458faa1c/descargas/windows/LivePulse-Setup.exe"
+    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/85ce0a49f1070ef12a04493a37c3a51e1000448f/descargas/windows/LivePulse-Setup.exe"
   },
   "windowsPortable": {
     "archivo": "LivePulse-Portable.exe",
-    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/62ea901c185fcab768dd0f094eec40fe458faa1c/descargas/windows/LivePulse-Portable.exe"
+    "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/85ce0a49f1070ef12a04493a37c3a51e1000448f/descargas/windows/LivePulse-Portable.exe"
   },
   "android": {
     "archivo": "LivePulse.apk",
