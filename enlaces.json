@@ -11,5 +11,9 @@
   "android": {
     "archivo": "LivePulse.apk",
     "url": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/android/LivePulse.apk"
+  },
+  "mac": {
+    "archivo": "LivePulse.dmg",
+    "url": ""
   }
 }

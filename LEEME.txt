@@ -10,6 +10,7 @@ BOTÓN                         ARCHIVO                                      CAMP
 Descargar para Windows        descargas/windows/LivePulse-Setup.exe        windows.archivo
 Versión portable              descargas/windows/LivePulse-Portable.exe     windowsPortable.archivo
 Descargar APK                 descargas/android/LivePulse.apk              android.archivo
+Descargar para Mac            descargas/mac/LivePulse.dmg                  mac.archivo
 Logo de la página             img/logo.png                                 (no está en enlaces.json)
 Icono de la pestaña           img/favicon.png                              (no está en enlaces.json)
 
@@ -20,6 +21,7 @@ CÓMO SE ARMA EL ENLACE
      descargas/windows/ + windows.archivo
      descargas/windows/ + windowsPortable.archivo
      descargas/android/ + android.archivo
+     descargas/mac/ + mac.archivo
 3. El campo "archivo" es SOLO el nombre. Sin carpetas, sin .. y sin barras.
 4. Si "url" empieza por https:// el botón usa esa dirección y el archivo
    de la carpeta se ignora. Sirve cuando el .exe pesa 100 MB o más.
@@ -34,9 +36,10 @@ No forma parte del nombre del archivo.
 
 INSTRUCCIONES POR CARPETA
 -------------------------
-descargas/LEEME.txt            mapa de las dos descargas
+descargas/LEEME.txt            mapa de las descargas
 descargas/windows/LEEME.txt    cómo colocar el instalador y el portable
 descargas/android/LEEME.txt    cómo colocar la APK
+descargas/mac/LEEME.txt        cómo colocar el DMG de Mac
 img/LEEME.txt                  cómo cambiar el logo y el icono
 README.md                      cómo subir ESTE sitio a GitHub y Netlify
 

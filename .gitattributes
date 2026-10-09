@@ -1,3 +1,4 @@
 *.exe binary
 *.apk binary
+*.dmg binary
 *.png binary

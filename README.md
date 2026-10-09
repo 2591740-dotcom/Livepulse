@@ -14,6 +14,7 @@ está en la carpeta donde vive ese archivo.
 | Descargar para Windows | `descargas/windows/LivePulse-Setup.exe` | `windows.archivo` |
 | Versión portable | `descargas/windows/LivePulse-Portable.exe` | `windowsPortable.archivo` |
 | Descargar APK | `descargas/android/LivePulse.apk` | `android.archivo` |
+| Descargar para Mac | `descargas/mac/LivePulse.dmg` | `mac.archivo` |
 
 `sitio.js` lee `enlaces.json`. Si `url` está vacío, arma la ruta
 `carpeta + archivo`. `index.html` repite esas mismas rutas por si el
@@ -63,8 +64,8 @@ La dirección queda en `algo.netlify.app`. En **Site configuration** →
 **Domain management** → **Options** → **Edit site name** puedes cambiar
 la palabra `algo`.
 
-`netlify.toml` ya dice que la carpeta publicada es esta, y que el exe y
-el apk se descargan en lugar de abrirse en el navegador.
+`netlify.toml` ya dice que la carpeta publicada es esta, y que el exe,
+el apk y el dmg se descargan en lugar de abrirse en el navegador.
 
 Si en vez de un repo solo con este sitio conectas el repo de todo LivePulse,
 en Netlify pon **Base directory** en `sitio` y **Publish directory** en `.`.
@@ -78,7 +79,7 @@ En PowerShell, dentro de `sitio`:
 python -m http.server 5500
 ```
 
-Abre `http://localhost:5500`. Los tres botones tienen que bajar el archivo
+Abre `http://localhost:5500`. Los botones tienen que bajar el archivo
 de su carpeta. Cierra el servidor con Ctrl+C.
 
 Abrir `index.html` con doble clic también descarga, porque el `href` ya
@@ -88,8 +89,8 @@ se ven cuando la página se abre desde un servidor o desde Netlify.
 ## 4. Cuando salga otra versión
 
 1. Sustituye el archivo en su carpeta **con el mismo nombre**.
-   Los comandos exactos están en `descargas/windows/LEEME.txt` y
-   `descargas/android/LEEME.txt`.
+   Los comandos exactos están en `descargas/windows/LEEME.txt`,
+   `descargas/android/LEEME.txt` y `descargas/mac/LEEME.txt`.
 2. Si quieres que la página diga otro número, cambia `version` en `enlaces.json`.
 3. Desde esta carpeta: `git add`, `git commit`, `git push`.
 4. Netlify publica solo. Prueba el botón y mira que el tamaño haya cambiado.

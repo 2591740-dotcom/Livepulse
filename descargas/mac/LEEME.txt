@@ -1,0 +1,26 @@
+MAC — CÓMO VINCULAR EL DMG
+==========================
+
+La página no busca "el dmg más nuevo". El botón apunta a un nombre fijo
+dentro de ESTA carpeta.
+
+Botón "Descargar para Mac"
+   Nombre exacto del archivo:     LivePulse.dmg
+   Ruta dentro del sitio:         descargas/mac/LivePulse.dmg
+   href en index.html:            descargas/mac/LivePulse.dmg
+   Campo en enlaces.json:         "mac" → "archivo": "LivePulse.dmg"
+   Campo "url":                   déjalo en "" para usar el archivo de esta carpeta
+
+Si esos tres textos coinciden (archivo, href y campo archivo), el botón
+descarga este archivo. El número de versión que se lee en la página es
+otro campo: "version" en enlaces.json. No lo pongas en el nombre del dmg.
+
+CÓMO REEMPLAZAR LA APP
+----------------------
+En el proyecto LivePulse, el empaquetado de Mac deja el disco en dist/
+
+  dist/LivePulse-2.0.3-mac.dmg    → aquí se llama LivePulse.dmg
+
+Copia ese archivo a esta carpeta y renómbralo a LivePulse.dmg.
+Pisa el archivo viejo. No uses Git LFS: Netlify gratis bajaría un texto
+corto en lugar del programa. GitHub rechaza un archivo de 100 MB o más.

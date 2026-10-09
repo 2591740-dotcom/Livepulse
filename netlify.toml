@@ -26,6 +26,13 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/descargas/mac/*.dmg"
+  [headers.values]
+    Content-Type = "application/x-apple-diskimage"
+    Content-Disposition = "attachment"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
   for = "/enlaces.json"
   [headers.values]
     Content-Type = "application/json; charset=utf-8"

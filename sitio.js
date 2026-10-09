@@ -2,7 +2,8 @@
   var carpetas = {
     windows: "descargas/windows/",
     windowsPortable: "descargas/windows/",
-    android: "descargas/android/"
+    android: "descargas/android/",
+    mac: "descargas/mac/"
   };
 
   function mb(bytes) {
@@ -79,7 +80,7 @@
       var version = typeof data.version === "string" && data.version.trim() ? data.version.trim() : "2.0.3";
       var marcas = document.querySelectorAll("[data-version]");
       for (var i = 0; i < marcas.length; i++) marcas[i].textContent = version;
-      ["windows", "windowsPortable", "android"].forEach(function (clave) {
+      ["windows", "windowsPortable", "android", "mac"].forEach(function (clave) {
         aplicar(clave, destino(data[clave], clave));
       });
     })
