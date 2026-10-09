@@ -14,7 +14,7 @@
 
 [[redirects]]
   from = "/descargas/windows/LivePulse-Portable.exe"
-  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Portable.exe"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/7f78d773debaff5f75262272a49aca3ad1f2d8eb/descargas/windows/LivePulse-Portable.exe"
   status = 301
   force = true
 
