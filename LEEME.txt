@@ -35,6 +35,8 @@ NÚMERO DE VERSIÓN QUE SE VE EN LA PÁGINA
 ----------------------------------------
 Está en enlaces.json, campo "version". Ejemplo: "1.0.1"
 No forma parte del nombre del archivo.
+Ese número es solo de Windows y Android. Cambiarlo no actualiza el DMG.
+El DMG se reemplaza desde el otro equipo, en descargas/mac/LivePulse.dmg.
 
 INSTRUCCIONES POR CARPETA
 -------------------------

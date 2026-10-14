@@ -22,6 +22,8 @@ navegador no ejecuta JavaScript. Conserva el nombre del archivo y no
 tendrás que tocar ni el HTML ni el JSON.
 
 El número que se ve en la página es `version` dentro de `enlaces.json`.
+Ese número es de Windows y Android. El DMG no entra en esa publicación:
+se reemplaza desde el otro equipo y conserva el nombre `LivePulse.dmg`.
 
 ## 1. Subir a GitHub
 

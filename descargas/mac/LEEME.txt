@@ -24,3 +24,6 @@ En el proyecto LivePulse, el empaquetado de Mac deja el disco en dist/
 Copia ese archivo a esta carpeta y renómbralo a LivePulse.dmg.
 Pisa el archivo viejo. No uses Git LFS: Netlify gratis bajaría un texto
 corto en lugar del programa. GitHub rechaza un archivo de 100 MB o más.
+
+Ese reemplazo se hace desde el Mac. Una publicación de Windows o Android
+no sustituye este DMG ni cambia su número.
