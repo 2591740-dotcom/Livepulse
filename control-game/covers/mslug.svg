@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-label="Metal Slug Neo Geo">
+  <defs>
+    <linearGradient id="msky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#163024"/>
+      <stop offset="0.48" stop-color="#3d6a34"/>
+      <stop offset="1" stop-color="#101810"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="180" fill="url(#msky)"/>
+  <rect x="0" y="132" width="640" height="48" fill="#24321c"/>
+  <rect x="0" y="156" width="640" height="24" fill="#141c10"/>
+  <rect x="72" y="112" width="92" height="22" fill="#6e7c46"/>
+  <rect x="90" y="96" width="42" height="18" fill="#556338"/>
+  <rect x="128" y="102" width="52" height="6" fill="#3c4a28"/>
+  <circle cx="94" cy="136" r="9" fill="#1c2414"/>
+  <circle cx="140" cy="136" r="9" fill="#1c2414"/>
+  <text x="360" y="78" text-anchor="middle" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-size="48" fill="#f4f0d8" stroke="#142010" stroke-width="8" paint-order="stroke">METAL SLUG</text>
+  <text x="360" y="108" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="#142010">NEO GEO</text>
+</svg>

@@ -1,0 +1,1007 @@
+{
+  "version": 2,
+  "games": [
+    {
+      "id": "smw",
+      "name": "Super Mario World",
+      "platform": "SNES",
+      "emulator": "BizHawk",
+      "description": "La lista muestra 5 regalos. Baja una fila: debajo de Vida extra están Caos y Lluvia. Con Regalo eliges qué regalo activa cada efecto.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "priceUsdt": 0,
+      "luaFile": "smw_livepulse.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/smw_livepulse.lua",
+      "cover": "smw.svg",
+      "romExts": [
+        ".sfc",
+        ".smc"
+      ],
+      "effects": [
+        {
+          "id": "hongo",
+          "name": "Hongo",
+          "icon": "🍄",
+          "defaultCoins": 1,
+          "defaultGiftName": "Rosa",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_HONGO"
+        },
+        {
+          "id": "flor",
+          "name": "Flor de fuego",
+          "icon": "🌸",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_FLOR"
+        },
+        {
+          "id": "estrella",
+          "name": "Estrella",
+          "icon": "⭐",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_ESTRELLA"
+        },
+        {
+          "id": "capa",
+          "name": "Capa",
+          "icon": "🪶",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_CAPA"
+        },
+        {
+          "id": "vida",
+          "name": "Vida extra",
+          "icon": "🟢",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_1UP"
+        },
+        {
+          "id": "caos-goombas",
+          "name": "Caos de Goombas ×6",
+          "icon": "👾",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "CAOS_GOOMBAS"
+        },
+        {
+          "id": "caos-koopas",
+          "name": "Caos de Koopas ×5",
+          "icon": "🐢",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "CAOS_KOOPAS"
+        },
+        {
+          "id": "lluvia-enemigos",
+          "name": "Lluvia de enemigos",
+          "icon": "🌧️",
+          "defaultCoins": 30,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "LLUVIA_ENEMIGOS"
+        },
+        {
+          "id": "ejercito",
+          "name": "Ejército",
+          "icon": "⚔️",
+          "defaultCoins": 50,
+          "defaultGiftName": "",
+          "cooldownSec": 25,
+          "luaCommand": "EJERCITO"
+        },
+        {
+          "id": "lluvia-vidas",
+          "name": "Lluvia de vidas ×7",
+          "icon": "🟢",
+          "defaultCoins": 40,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "LLUVIA_VIDAS"
+        },
+        {
+          "id": "lluvia-hongos",
+          "name": "Lluvia de hongos ×5",
+          "icon": "🍄",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_HONGOS"
+        },
+        {
+          "id": "moneda",
+          "name": "Moneda",
+          "icon": "🪙",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 4,
+          "luaCommand": "SPAWN_MONEDA"
+        },
+        {
+          "id": "yoshi",
+          "name": "Yoshi",
+          "icon": "🦖",
+          "defaultCoins": 30,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "SPAWN_YOSHI"
+        },
+        {
+          "id": "huevo",
+          "name": "Huevo de Yoshi",
+          "icon": "🥚",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_HUEVO"
+        },
+        {
+          "id": "bloque",
+          "name": "Bloque ?",
+          "icon": "❓",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_BLOQUE"
+        },
+        {
+          "id": "pswitch",
+          "name": "P-Switch",
+          "icon": "🟦",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "SPAWN_PSWITCH"
+        },
+        {
+          "id": "goomba",
+          "name": "Goomba",
+          "icon": "👾",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 6,
+          "luaCommand": "SPAWN_GOOMBA"
+        },
+        {
+          "id": "koopa",
+          "name": "Koopa verde",
+          "icon": "🐢",
+          "defaultCoins": 2,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_KOOPA"
+        },
+        {
+          "id": "koopa-rojo",
+          "name": "Koopa rojo",
+          "icon": "🐢",
+          "defaultCoins": 3,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_KOOPA_ROJO"
+        },
+        {
+          "id": "koopa-azul",
+          "name": "Koopa azul",
+          "icon": "🐢",
+          "defaultCoins": 4,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_KOOPA_AZUL"
+        },
+        {
+          "id": "parakoopa",
+          "name": "Para-Koopa",
+          "icon": "🐢",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_PARAKOOPA"
+        },
+        {
+          "id": "bala",
+          "name": "Bala",
+          "icon": "💥",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_BALA"
+        },
+        {
+          "id": "buzzy",
+          "name": "Buzzy",
+          "icon": "🪲",
+          "defaultCoins": 3,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_BUZZY"
+        },
+        {
+          "id": "pincho",
+          "name": "Pincho",
+          "icon": "🔵",
+          "defaultCoins": 4,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_SPINY"
+        },
+        {
+          "id": "lakitu",
+          "name": "Nube Lakitu",
+          "icon": "☁️",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_LAKITU"
+        },
+        {
+          "id": "martillo",
+          "name": "Tortuga martillo",
+          "icon": "🔨",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_MARTILLO"
+        },
+        {
+          "id": "bobomb",
+          "name": "Bob-omb",
+          "icon": "💣",
+          "defaultCoins": 4,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_BOBOMB"
+        },
+        {
+          "id": "thwomp",
+          "name": "Thwomp",
+          "icon": "🧱",
+          "defaultCoins": 12,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_THWOMP"
+        },
+        {
+          "id": "fantasma",
+          "name": "Fantasma",
+          "icon": "👻",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_FANTASMA"
+        },
+        {
+          "id": "eerie",
+          "name": "Espectro",
+          "icon": "👁️",
+          "defaultCoins": 6,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_EERIE"
+        },
+        {
+          "id": "pez",
+          "name": "Pez",
+          "icon": "🐟",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_PEZ"
+        },
+        {
+          "id": "delfin",
+          "name": "Delfín",
+          "icon": "🐬",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_DELFIN"
+        }
+      ]
+    },
+    {
+      "id": "smb",
+      "name": "Super Mario Bros. (NES)",
+      "platform": "NES",
+      "emulator": "BizHawk",
+      "description": "Super Mario Bros. de NES. Baja una fila: debajo de Vida extra están Caos y Lluvia. Con Regalo eliges qué regalo activa cada efecto. El NES muestra 5 enemigos y 1 power-up a la vez. La lluvia de vidas suma vidas al marcador y muestra un 1-Up.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "priceUsdt": 0,
+      "luaFile": "smb_livepulse.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/smb_livepulse.lua",
+      "cover": "smb.svg",
+      "romExts": [
+        ".nes"
+      ],
+      "romNote": "LivePulse no distribuye ROMs. Super Mario Bros. (NES) requiere la versión USA (.nes). Colócala en C:\\LivePulse\\roms\\.",
+      "effects": [
+        {
+          "id": "hongo",
+          "name": "Hongo",
+          "icon": "🍄",
+          "defaultCoins": 1,
+          "defaultGiftName": "Rosa",
+          "cooldownSec": 6,
+          "luaCommand": "SPAWN_HONGO"
+        },
+        {
+          "id": "flor",
+          "name": "Flor de fuego",
+          "icon": "🌸",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_FLOR"
+        },
+        {
+          "id": "estrella",
+          "name": "Estrella",
+          "icon": "⭐",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_ESTRELLA"
+        },
+        {
+          "id": "vida",
+          "name": "Vida extra (1-Up)",
+          "icon": "🟢",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_1UP"
+        },
+        {
+          "id": "caos-goombas",
+          "name": "Caos de Goombas ×5",
+          "icon": "🌰",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "CAOS_GOOMBAS"
+        },
+        {
+          "id": "caos-koopas",
+          "name": "Caos de Koopas ×5",
+          "icon": "🐢",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "CAOS_KOOPAS"
+        },
+        {
+          "id": "lluvia-enemigos",
+          "name": "Lluvia de enemigos",
+          "icon": "🌧️",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_ENEMIGOS"
+        },
+        {
+          "id": "lluvia-vidas",
+          "name": "Lluvia de vidas ×5",
+          "icon": "🟢",
+          "defaultCoins": 30,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_VIDAS"
+        },
+        {
+          "id": "lluvia-hongos",
+          "name": "Lluvia de hongos ×5",
+          "icon": "🍄",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_HONGOS"
+        },
+        {
+          "id": "moneda",
+          "name": "Moneda (+1)",
+          "icon": "🪙",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 3,
+          "luaCommand": "SPAWN_MONEDA"
+        },
+        {
+          "id": "goomba",
+          "name": "Goomba",
+          "icon": "🌰",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 5,
+          "luaCommand": "SPAWN_GOOMBA"
+        },
+        {
+          "id": "koopa",
+          "name": "Koopa verde",
+          "icon": "🐢",
+          "defaultCoins": 2,
+          "defaultGiftName": "",
+          "cooldownSec": 6,
+          "luaCommand": "SPAWN_KOOPA"
+        },
+        {
+          "id": "parakoopa",
+          "name": "Para-Koopa",
+          "icon": "🪽",
+          "defaultCoins": 4,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_PARAKOOPA"
+        },
+        {
+          "id": "bala",
+          "name": "Bala cañón",
+          "icon": "💥",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_BALA"
+        },
+        {
+          "id": "pincho",
+          "name": "Spiny (Pincho)",
+          "icon": "🦔",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_SPINY"
+        },
+        {
+          "id": "lakitu",
+          "name": "Lakitu",
+          "icon": "☁️",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_LAKITU"
+        },
+        {
+          "id": "martillo",
+          "name": "Hammer Brother",
+          "icon": "🔨",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_HAMMERBRO"
+        },
+        {
+          "id": "piranha",
+          "name": "Planta piraña",
+          "icon": "🪴",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_PIRANHA"
+        }
+      ]
+    },
+    {
+      "id": "smb3",
+      "name": "Super Mario Bros. 3",
+      "platform": "NES",
+      "emulator": "BizHawk",
+      "description": "Super Mario Bros. 3 con efectos de caos y lluvia de vidas. Baja una fila: debajo de Tanooki están Caos y Lluvia. Con Regalo eliges qué regalo activa cada efecto.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "luaFile": "smb3_caos.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/smb3_caos.lua",
+      "cover": "smb3.svg",
+      "romExts": [
+        ".nes"
+      ],
+      "romNote": "LivePulse no distribuye ROMs. Super Mario Bros. 3 requiere la versión USA (.nes). Colócala en C:\\LivePulse\\roms\\.",
+      "effects": [
+        {
+          "id": "hongo",
+          "name": "Hongo",
+          "icon": "🍄",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_HONGO"
+        },
+        {
+          "id": "flor",
+          "name": "Flor",
+          "icon": "🌸",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_FLOR"
+        },
+        {
+          "id": "hoja",
+          "name": "Hoja Mapache",
+          "icon": "🍃",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_HOJA"
+        },
+        {
+          "id": "estrella",
+          "name": "Estrella",
+          "icon": "⭐",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_ESTRELLA"
+        },
+        {
+          "id": "1up",
+          "name": "1-Up",
+          "icon": "🟢",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "SPAWN_1UP"
+        },
+        {
+          "id": "tanooki",
+          "name": "Tanooki",
+          "icon": "🦝",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_TANOOKI"
+        },
+        {
+          "id": "caos_goombas",
+          "name": "Caos Goombas",
+          "icon": "🌰",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "CAOS_GOOMBAS"
+        },
+        {
+          "id": "caos_koopas",
+          "name": "Caos Koopas",
+          "icon": "🐢",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "CAOS_KOOPAS"
+        },
+        {
+          "id": "lluvia_enemigos",
+          "name": "Lluvia Enemigos",
+          "icon": "🌧️",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "LLUVIA_ENEMIGOS"
+        },
+        {
+          "id": "ejercito",
+          "name": "Ejército",
+          "icon": "⚔️",
+          "defaultCoins": 50,
+          "defaultGiftName": "",
+          "cooldownSec": 25,
+          "luaCommand": "EJERCITO"
+        },
+        {
+          "id": "lluvia_vidas",
+          "name": "Lluvia de Vidas",
+          "icon": "🟢",
+          "defaultCoins": 30,
+          "defaultGiftName": "",
+          "cooldownSec": 30,
+          "luaCommand": "LLUVIA_VIDAS"
+        },
+        {
+          "id": "lluvia_hongos",
+          "name": "Lluvia de Hongos",
+          "icon": "🍄",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "LLUVIA_HONGOS"
+        },
+        {
+          "id": "lluvia_estrellas",
+          "name": "Lluvia de Estrellas",
+          "icon": "⭐⭐",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 25,
+          "luaCommand": "LLUVIA_ESTRELLAS"
+        },
+        {
+          "id": "goomba",
+          "name": "Goomba",
+          "icon": "🌰",
+          "defaultCoins": 1,
+          "defaultGiftName": "",
+          "cooldownSec": 5,
+          "luaCommand": "SPAWN_GOOMBA"
+        },
+        {
+          "id": "koopa",
+          "name": "Koopa",
+          "icon": "🐢",
+          "defaultCoins": 2,
+          "defaultGiftName": "",
+          "cooldownSec": 6,
+          "luaCommand": "SPAWN_KOOPA"
+        },
+        {
+          "id": "hammerbro",
+          "name": "Hammer Bro",
+          "icon": "🔨",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_HAMMERBRO"
+        },
+        {
+          "id": "piranha",
+          "name": "Planta Piraña",
+          "icon": "🪴",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_PIRANHA"
+        },
+        {
+          "id": "lakitu",
+          "name": "Lakitu",
+          "icon": "☁️",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_LAKITU"
+        },
+        {
+          "id": "bala",
+          "name": "Bullet Bill",
+          "icon": "💥",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_BALA"
+        }
+      ]
+    },
+    {
+      "id": "contra",
+      "name": "Contra",
+      "platform": "NES",
+      "emulator": "BizHawk",
+      "description": "Contra (USA). Las armas son ítems reales: el jugador las recoge. Caos y Lluvia están debajo de Disparo rápido.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "luaFile": "contra_bizhawk.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/contra_bizhawk.lua",
+      "cover": "contra.svg",
+      "romExts": [
+        ".nes"
+      ],
+      "romNote": "LivePulse no distribuye ROMs. Contra requiere Contra (USA).nes, la versión original de NES, sin hack. Colócala en C:\\LivePulse\\roms\\.",
+      "effects": [
+        {
+          "id": "rifle",
+          "name": "Rifle (Spread)",
+          "icon": "🔫",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_RIFLE"
+        },
+        {
+          "id": "machinegun",
+          "name": "Ametralladora",
+          "icon": "💠",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_MACHINEGUN"
+        },
+        {
+          "id": "laser",
+          "name": "Láser",
+          "icon": "🔴",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 10,
+          "luaCommand": "SPAWN_LASER"
+        },
+        {
+          "id": "fireball",
+          "name": "Bola de fuego",
+          "icon": "🔥",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_FIREBALL"
+        },
+        {
+          "id": "barrier",
+          "name": "Barrera",
+          "icon": "🛡️",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "SPAWN_BARRIER"
+        },
+        {
+          "id": "rapid",
+          "name": "Disparo rápido",
+          "icon": "⚡",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_RAPID"
+        },
+        {
+          "id": "caos_soldados",
+          "name": "Caos de soldados",
+          "icon": "👥",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "CAOS_SOLDADOS"
+        },
+        {
+          "id": "caos_enemigos",
+          "name": "Caos de enemigos",
+          "icon": "💀",
+          "defaultCoins": 25,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "CAOS_ENEMIGOS"
+        },
+        {
+          "id": "lluvia_enemigos",
+          "name": "Lluvia de enemigos",
+          "icon": "🌧️",
+          "defaultCoins": 20,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_ENEMIGOS"
+        },
+        {
+          "id": "lluvia_armas",
+          "name": "Lluvia de armas",
+          "icon": "🎁",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_ARMAS"
+        },
+        {
+          "id": "lluvia_barreras",
+          "name": "Lluvia de barreras",
+          "icon": "🛡️",
+          "defaultCoins": 30,
+          "defaultGiftName": "",
+          "cooldownSec": 20,
+          "luaCommand": "LLUVIA_BARRERAS"
+        },
+        {
+          "id": "soldado",
+          "name": "Soldado",
+          "icon": "🪖",
+          "defaultCoins": 2,
+          "defaultGiftName": "",
+          "cooldownSec": 5,
+          "luaCommand": "SPAWN_SOLDADO"
+        },
+        {
+          "id": "sniper",
+          "name": "Francotirador",
+          "icon": "🎯",
+          "defaultCoins": 6,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_SNIPER"
+        },
+        {
+          "id": "running",
+          "name": "Corredor",
+          "icon": "🏃",
+          "defaultCoins": 3,
+          "defaultGiftName": "",
+          "cooldownSec": 5,
+          "luaCommand": "SPAWN_RUNNING"
+        },
+        {
+          "id": "turret",
+          "name": "Torreta",
+          "icon": "🗼",
+          "defaultCoins": 12,
+          "defaultGiftName": "",
+          "cooldownSec": 12,
+          "luaCommand": "SPAWN_TURRET"
+        },
+        {
+          "id": "jumper",
+          "name": "Saltador",
+          "icon": "🦘",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_JUMPER"
+        }
+      ]
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset Riders",
+      "platform": "SNES",
+      "emulator": "BizHawk",
+      "description": "Sunset Riders (USA). La placa dorada es ráfaga, la plateada son dos armas del personaje y el corazón es una vida. Gratis mientras se prueba.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "luaFile": "sunset_riders.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/sunset_riders.lua",
+      "cover": "sunset.svg",
+      "romExts": [
+        ".sfc",
+        ".smc"
+      ],
+      "romNote": "LivePulse no distribuye ROMs. Sunset Riders requiere Sunset Riders (USA).sfc, SNES original, sin hack. Colócala en C:\\LivePulse\\roms\\.",
+      "effects": [
+        {
+          "id": "dorada",
+          "name": "Placa dorada",
+          "icon": "⭐",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_RAPID"
+        },
+        {
+          "id": "plateada",
+          "name": "Placa plateada",
+          "icon": "🥈",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_RIFLE"
+        },
+        {
+          "id": "corazon",
+          "name": "Corazón",
+          "icon": "❤️",
+          "defaultCoins": 10,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_WHISKEY"
+        },
+        {
+          "id": "lluvia_armas",
+          "name": "Lluvia de placas",
+          "icon": "🎁",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_ARMAS"
+        },
+        {
+          "id": "lluvia_vidas",
+          "name": "Lluvia de vidas",
+          "icon": "💚",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "LLUVIA_VIDAS"
+        }
+      ]
+    },
+    {
+      "id": "mslug",
+      "name": "Metal Slug",
+      "platform": "Neo Geo",
+      "emulator": "BizHawk",
+      "description": "Metal Slug. Gratis mientras se prueba. La ametralladora, el cohete, la escopeta, las llamas y las granadas se entregan al jugador. La lluvia suma munición o granadas.",
+      "free": true,
+      "price": 0,
+      "currency": "USD",
+      "priceLabel": "Gratis",
+      "priceUsd": 0,
+      "luaFile": "metal_slug.lua",
+      "luaDownloadUrl": "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/control-game/lua/metal_slug.lua",
+      "cover": "mslug.svg",
+      "romExts": [
+        ".zip"
+      ],
+      "romNote": "LivePulse no distribuye ROMs. Metal Slug usa tu mslug.zip, el set original, en C:\\LivePulse\\roms\\. BizHawk lo abre con MAME.",
+      "effects": [
+        {
+          "id": "pesada",
+          "name": "Ametralladora pesada",
+          "icon": "💥",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_HEAVY"
+        },
+        {
+          "id": "cohete",
+          "name": "Lanzacohetes",
+          "icon": "🚀",
+          "defaultCoins": 8,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_ROCKET"
+        },
+        {
+          "id": "escopeta",
+          "name": "Escopeta",
+          "icon": "🔫",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_SHOTGUN"
+        },
+        {
+          "id": "llamas",
+          "name": "Llamas",
+          "icon": "🔥",
+          "defaultCoins": 6,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_FLAME"
+        },
+        {
+          "id": "granadas",
+          "name": "Granadas",
+          "icon": "💣",
+          "defaultCoins": 5,
+          "defaultGiftName": "",
+          "cooldownSec": 8,
+          "luaCommand": "SPAWN_BOMBA"
+        },
+        {
+          "id": "lluvia_armas",
+          "name": "Lluvia de munición",
+          "icon": "🎁",
+          "defaultCoins": 18,
+          "defaultGiftName": "",
+          "cooldownSec": 18,
+          "luaCommand": "LLUVIA_ARMAS"
+        },
+        {
+          "id": "lluvia_bombas",
+          "name": "Lluvia de granadas",
+          "icon": "💥",
+          "defaultCoins": 15,
+          "defaultGiftName": "",
+          "cooldownSec": 15,
+          "luaCommand": "LLUVIA_BOMBAS"
+        }
+      ]
+    }
+  ]
+}

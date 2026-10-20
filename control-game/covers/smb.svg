@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-label="Super Mario Bros. NES">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6cb4ff"/>
+      <stop offset="1" stop-color="#3c7fe0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="180" fill="url(#sky)"/>
+  <ellipse cx="90" cy="42" rx="36" ry="16" fill="#f4fbff"/>
+  <ellipse cx="118" cy="46" rx="28" ry="14" fill="#f4fbff"/>
+  <ellipse cx="500" cy="36" rx="42" ry="16" fill="#f4fbff"/>
+  <ellipse cx="538" cy="42" rx="26" ry="12" fill="#f4fbff"/>
+  <rect y="132" width="640" height="14" fill="#f8d878"/>
+  <rect y="146" width="640" height="34" fill="#c84c0c"/>
+  <g fill="#a03008">
+    <rect x="18" y="154" width="16" height="8"/>
+    <rect x="70" y="162" width="16" height="8"/>
+    <rect x="140" y="154" width="16" height="8"/>
+    <rect x="210" y="164" width="16" height="8"/>
+    <rect x="300" y="154" width="16" height="8"/>
+    <rect x="390" y="164" width="16" height="8"/>
+    <rect x="470" y="154" width="16" height="8"/>
+    <rect x="560" y="162" width="16" height="8"/>
+  </g>
+  <text x="320" y="78" text-anchor="middle" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-size="54" fill="#fff8e8" stroke="#1b2744" stroke-width="8" paint-order="stroke">SUPER MARIO BROS.</text>
+  <text x="320" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="#1b2744">NES</text>
+</svg>

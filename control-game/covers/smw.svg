@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-label="Super Mario World">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fd8ff"/>
+      <stop offset="1" stop-color="#49b4ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="180" fill="url(#sky)"/>
+  <ellipse cx="70" cy="38" rx="34" ry="14" fill="#f7fdff"/>
+  <ellipse cx="560" cy="46" rx="40" ry="15" fill="#f7fdff"/>
+  <ellipse cx="150" cy="150" rx="120" ry="46" fill="#3aaa3a"/>
+  <ellipse cx="150" cy="142" rx="100" ry="34" fill="#63d25a"/>
+  <ellipse cx="500" cy="156" rx="140" ry="48" fill="#2f8f32"/>
+  <ellipse cx="500" cy="146" rx="116" ry="34" fill="#57c44e"/>
+  <rect y="158" width="640" height="22" fill="#2a7a28"/>
+  <text x="320" y="86" text-anchor="middle" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-size="48" fill="#fff6c8" stroke="#1d4d86" stroke-width="8" paint-order="stroke">SUPER MARIO WORLD</text>
+  <text x="320" y="122" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6" fill="#1d4d86">SNES</text>
+</svg>
