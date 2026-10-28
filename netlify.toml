@@ -8,13 +8,13 @@
 # entregue el archivo si alguien abre la ruta vieja del sitio.
 [[redirects]]
   from = "/descargas/windows/LivePulse-Setup.exe"
-  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Setup.exe?v=4"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Setup.exe?v=5"
   status = 301
   force = true
 
 [[redirects]]
   from = "/descargas/windows/LivePulse-Portable.exe"
-  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Portable.exe?v=4"
+  to = "https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Portable.exe?v=5"
   status = 301
   force = true
 
