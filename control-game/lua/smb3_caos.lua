@@ -12,6 +12,108 @@
 local CMD_PATH = "C:\\LivePulse\\livepulse_cmd.txt"
 local ON_PATH = "C:\\LivePulse\\livepulse_on.txt"
 local STYLE_PATH = "C:\\LivePulse\\livepulse_style.txt"
+local PLATE_PATH = "C:\\LivePulse\\livepulse_plate.txt"
+local plateOf = {}
+local heroName = ""
+
+-- LivePulse pinta el nombre exacto, emojis incluidos, en un PNG.
+-- gui.drawText no puede recibirlos: BizHawk 2.11 se congela.
+local function readPlate()
+  if io == nil or io.open == nil then return "" end
+  local handle = io.open(PLATE_PATH, "r")
+  if not handle then return "" end
+  local line = handle:read("*l")
+  handle:close()
+  return tostring(line or ""):gsub("^\239\187\191", ""):gsub("^%s+", ""):gsub("%s+$", "")
+end
+
+local function rememberPlate(user)
+  if user == nil or user == "" then return end
+  local path, wText, hText = readPlate():match("^([^|]+)|(%d+)|(%d+)$")
+  local w = tonumber(wText)
+  local h = tonumber(hText)
+  if path and w and h and w >= 1 and h >= 1 and w <= 2000 and h <= 400 then
+    plateOf[user] = { path = path, w = w, h = h }
+  else
+    plateOf[user] = nil
+  end
+end
+
+-- Las letras se pintan como pixeles del juego. Una imagen estirada tiembla al caminar.
+local spanOf = {}
+local plateHold = {}
+
+local function loadSpans(path)
+  local found = spanOf[path]
+  if found then return found end
+  if io == nil or io.open == nil then return nil end
+  local handle = io.open(path .. ".px", "r")
+  if not handle then return nil end
+  local spans = {}
+  for line in handle:lines() do
+    local yText, xText, lenText, color8 = line:match("^(%d+) (%d+) (%d+) (%x%x%x%x%x%x%x%x)$")
+    local color6 = nil
+    if not yText then
+      yText, xText, lenText, color6 = line:match("^(%d+) (%d+) (%d+) (%x%x%x%x%x%x)$")
+    end
+    if yText then
+      local paint = color8 and tonumber(color8, 16) or (0xFF000000 + tonumber(color6, 16))
+      spans[#spans + 1] = {
+        y = tonumber(yText),
+        x = tonumber(xText),
+        len = tonumber(lenText),
+        color = paint
+      }
+    end
+  end
+  handle:close()
+  if #spans < 1 then return nil end
+  spanOf[path] = spans
+  return spans
+end
+
+local function stillPoint(key, x, y)
+  local spot = plateHold[key]
+  if not spot then
+    plateHold[key] = { x = x, y = y, rawX = x, rawY = y, dx = 0, dy = 0 }
+    return x, y
+  end
+  local dx = x - spot.rawX
+  local dy = y - spot.rawY
+  local function flip(delta, last)
+    if delta == 0 or last == 0 then return false end
+    if delta > 2 or delta < -2 or last > 2 or last < -2 then return false end
+    return (delta > 0 and last < 0) or (delta < 0 and last > 0)
+  end
+  if not flip(dx, spot.dx) then spot.x = x end
+  if not flip(dy, spot.dy) then spot.y = y end
+  spot.dx = dx
+  spot.dy = dy
+  spot.rawX = x
+  spot.rawY = y
+  return spot.x, spot.y
+end
+
+local function drawPlate(px, py, plate, anchor)
+  if type(plate) ~= "table" or not plate.path or plate.path == "" then return false end
+  if not gui or not gui.drawLine then return false end
+  local spans = loadSpans(plate.path)
+  if not spans then return false end
+  if gui.use_surface then gui.use_surface("emucore") end
+  local w = math.max(1, math.floor(plate.w))
+  local h = math.max(1, math.floor(plate.h))
+  local x = math.floor(px) - math.floor(w / 2)
+  local y = math.floor(py) - h
+  if anchor == "top" then y = math.floor(py) end
+  x, y = stillPoint(plate.path .. "|" .. (anchor or "bottom"), x, y)
+  for i = 1, #spans do
+    local s = spans[i]
+    local x1 = x + s.x
+    local y1 = y + s.y
+    gui.drawLine(x1, y1, x1 + s.len - 1, y1, s.color, "emucore")
+  end
+  return h
+end
 
 local ID_1UP = 0x0B
 local ID_STAR = 0x0C
@@ -90,7 +192,7 @@ local EFFECTS = {
 }
 
 local frame = 0
-local nameStyle = { size = 16, font = "Segoe UI Emoji", style = "regular", color = 0xFFFFFF00 }
+local nameStyle = { size = 16, font = "Segoe UI", style = "regular", color = 0xFFFFFF00, back = 0x00000000 }
 local hudNote = ""
 local hudUntil = 0
 local ramReady = false
@@ -412,6 +514,7 @@ local function poll()
     deleteCmd()
     return
   end
+  rememberPlate(user)
   if not playable() then
     return
   end
@@ -457,48 +560,132 @@ local STYLE_WEIGHTS = {
   ["bold italic"] = true
 }
 
+local HERO_PATH = "C:\\LivePulse\\livepulse_hero.txt"
+local HERO_PLATE_PATH = "C:\\LivePulse\\livepulse_hero_plate.txt"
+local HERO_STYLE_PATH = "C:\\LivePulse\\livepulse_hero_style.txt"
+local heroText = { size = 16, font = "Segoe UI", style = "regular", color = 0xFFFFFF00, back = 0x00000000 }
+local heroPlate = nil
+
+local function loadHero()
+  if io == nil or io.open == nil then return end
+  local styleFile = io.open(HERO_STYLE_PATH, "r")
+  if styleFile then
+    local styleLine = styleFile:read("*l")
+    styleFile:close()
+    local sizeText, font, weight, color, backText = tostring(styleLine or ""):match("^(%d+)|([^|\r\n]+)|([^|\r\n]+)|(%x%x%x%x%x%x)|([^|\r\n]*)")
+    if not sizeText then
+      sizeText, font, weight, color = tostring(styleLine or ""):match("^(%d+)|([^|\r\n]+)|([^|\r\n]+)|(%x%x%x%x%x%x)$")
+      backText = "none"
+    end
+    local size = tonumber(sizeText)
+    if size and size >= 12 and size <= 32 then heroText.size = size end
+    if font and font ~= "Segoe UI Emoji" and STYLE_FONTS[font] then heroText.font = font end
+    if weight and STYLE_WEIGHTS[weight] then heroText.style = weight end
+    local rgb = tonumber(color or "", 16)
+    if rgb then heroText.color = 0xFF000000 + rgb end
+    heroText.back = 0x00000000
+    if backText and string.match(backText, "^%x%x%x%x%x%x$") then
+      local backRgb = tonumber(backText, 16)
+      if backRgb then heroText.back = 0xFF000000 + backRgb end
+    end
+  end
+  local handle = io.open(HERO_PATH, "r")
+  if not handle then
+    heroName = ""
+    heroPlate = nil
+    return
+  end
+  local line = handle:read("*l")
+  handle:close()
+  local name = tostring(line or ""):gsub("^\239\187\191", ""):gsub("[\r\n|]", " "):gsub("^%s+", ""):gsub("%s+$", "")
+  if name == "" then
+    heroName = ""
+    heroPlate = nil
+    return
+  end
+  heroName = name
+  heroPlate = nil
+  local plate = io.open(HERO_PLATE_PATH, "r")
+  if not plate then return end
+  local raw = plate:read("*l")
+  plate:close()
+  local path, wText, hText = tostring(raw or ""):match("^([^|]+)|(%d+)|(%d+)$")
+  local w = tonumber(wText)
+  local h = tonumber(hText)
+  if path and w and h and w >= 1 and h >= 1 and w <= 2000 and h <= 400 then
+    heroPlate = { path = path, w = w, h = h }
+  end
+end
+
 local function loadStyle()
+  loadHero()
   if io == nil or io.open == nil then return end
   local handle = io.open(STYLE_PATH, "r")
   if not handle then return end
   local line = handle:read("*l")
   handle:close()
   if not line then return end
-  local sizeText, font, weight, color = line:match("^(%d+)|([^|\r\n]+)|([^|\r\n]+)|(%x%x%x%x%x%x)$")
+  local sizeText, font, weight, color, backText = line:match("^(%d+)|([^|\r\n]+)|([^|\r\n]+)|(%x%x%x%x%x%x)|([^|\r\n]*)")
+  if not sizeText then
+    sizeText, font, weight, color = line:match("^(%d+)|([^|\r\n]+)|([^|\r\n]+)|(%x%x%x%x%x%x)$")
+    backText = "none"
+  end
   local size = tonumber(sizeText)
   if not size or size < 12 or size > 32 then size = 16 end
-  if not STYLE_FONTS[font] then font = "Segoe UI Emoji" end
+  if not font or font == "Segoe UI Emoji" or not STYLE_FONTS[font] then font = "Segoe UI" end
   if not STYLE_WEIGHTS[weight] then weight = "regular" end
   local rgb = tonumber(color, 16) or 0xFFFF00
   nameStyle.size = size
   nameStyle.font = font
   nameStyle.style = weight
   nameStyle.color = 0xFF000000 + rgb
+  nameStyle.back = 0x00000000
+  if backText and string.match(backText, "^%x%x%x%x%x%x$") then
+    local backRgb = tonumber(backText, 16)
+    if backRgb then nameStyle.back = 0xFF000000 + backRgb end
+  end
 end
 
-local function labelFont(text)
-  if string.find(tostring(text or ""), "[\128-\255]") then return "Segoe UI Emoji" end
-  return nameStyle.font
+-- BizHawk 2.11 se cuelga dentro de drawText si la fuente es Segoe UI Emoji
+-- o si el texto trae un emoji. Los acentos se quedan; el emoji no se pinta.
+local function plainName(text)
+  local src = tostring(text or "")
+  local out = {}
+  local i = 1
+  while i <= #src do
+    local b = src:byte(i)
+    local len = 1
+    if b >= 240 then len = 4
+    elseif b >= 224 then len = 3
+    elseif b >= 192 then len = 2
+    end
+    if i + len - 1 > #src then break end
+    if b < 224 then out[#out + 1] = src:sub(i, i + len - 1) end
+    i = i + len
+  end
+  return (table.concat(out):gsub("^%s+", ""):gsub("%s+$", ""))
 end
 
-local function drawLabel(px, py, text)
+local function labelFont(style)
+  local font = (style or nameStyle).font
+  if font == nil or font == "" or font == "Segoe UI Emoji" then return "Segoe UI" end
+  return font
+end
+
+local function drawLabel(px, py, text, style)
+  local look = style or nameStyle
   local tx = math.floor(px)
   local ty = math.floor(py)
   if tx < 20 then tx = 20 end
   if tx > 236 then tx = 236 end
   if ty < 18 then ty = 18 end
   if ty > 210 then ty = 210 end
-  local drawn = false
-  local font = labelFont(text)
-  if gui.drawText then
-    drawn = pcall(gui.drawText, tx, ty, text, nameStyle.color, 0xC0101828, nameStyle.size, font, nameStyle.style, "center", "bottom")
-    if not drawn and font ~= "Segoe UI Emoji" then
-      drawn = pcall(gui.drawText, tx, ty, text, nameStyle.color, 0xC0101828, nameStyle.size, "Segoe UI Emoji", nameStyle.style, "center", "bottom")
-    end
-  end
-  if not drawn then
-    pcall(gui.pixelText, math.max(4, tx - 8), math.max(4, ty - 10), text, 0xFFFFFF00, 0xC0101828)
-  end
+  local shown = tostring(text or "")
+  local plate = plateOf[shown]
+  if style == heroText then plate = heroPlate end
+  if drawPlate(tx, ty, plate) then return end
+  local safe = plainName(shown)
+  pcall(gui.pixelText, math.max(4, tx - 8), math.max(4, ty - 10), safe ~= "" and safe or "?", 0xFFFFFF00, look.back)
 end
 
 local function drawNames()
@@ -515,12 +702,26 @@ local function drawNames()
   end
 end
 
+-- $AB y $B4 son la X y la Y de Mario en la pantalla.
+local function drawHero()
+  if heroName == "" or smb1() then return end
+  local mode = read8(0x0100)
+  if mode ~= 0xC0 and mode ~= 0x80 then return end
+  local tileset = read8(0x070A)
+  if not tileset or tileset < 1 or tileset > 14 then return end
+  local sx = read8(0x00AB)
+  local sy = read8(0x00B4)
+  if not sx or not sy then return end
+  drawLabel(sx + 8, sy - 4, heroName, heroText)
+end
+
 local function drawHud()
   pcall(function()
     if gui.drawText then
       gui.drawText(128, 4, "livepulse", 0x99FFFFFF, 0x00000000, 11, "Segoe UI", "regular", "center", "top")
-      if hudNote ~= "" and frame <= hudUntil then
-        gui.drawText(128, 16, hudNote, 0xCCFFFFFF, 0x00000000, 11, "Segoe UI", "regular", "center", "top")
+      local note = plainName(hudNote)
+      if note ~= "" and frame <= hudUntil then
+        gui.drawText(128, 16, note, 0xCCFFFFFF, 0x00000000, 11, "Segoe UI", "regular", "center", "top")
       end
     else
       gui.pixelText(104, 4, "livepulse", 0x99FFFFFF, 0x00000000)
@@ -577,6 +778,7 @@ while true do
     poll()
     drawNames()
   end
+  pcall(drawHero)
   drawHud()
   emu.frameadvance()
 end
