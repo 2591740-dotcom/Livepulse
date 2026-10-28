@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LivePulse es el asistente en vivo para BIGO. Lee el chat, agradece los regalos y pone en YouTube lo que pide la gente. Windows, Mac y Android.">
+  <meta name="description" content="LivePulse mete los regalos de tu live de BIGO dentro del juego. En Windows eliges qué regalo suelta cada efecto. En el teléfono, play pone la canción.">
   <meta name="theme-color" content="#070b12">
-  <title>LivePulse — Asistente en vivo para BIGO</title>
+  <title>LivePulse — Regalos del live dentro del juego</title>
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="estilos.css">
 </head>
@@ -27,14 +27,14 @@
     <nav>
       <a href="#descargas">Descargas</a>
       <a href="#instalar">Instalar</a>
-      <a href="#que-hace">Qué hace</a>
+      <a href="#que-hace">Juegos</a>
     </nav>
   </header>
 
   <main class="wrap" id="inicio">
     <section class="hero">
       <img class="hero-logo" src="img/logo.png" alt="LivePulse">
-      <p class="eyebrow">Asistente en vivo para BIGO</p>
+      <p class="eyebrow">Regalos del live, efectos en el juego</p>
       <h1>LivePulse</h1>
       <svg class="wave" viewBox="0 0 240 32" aria-hidden="true">
         <defs>
@@ -45,7 +45,7 @@
         </defs>
         <polyline fill="none" stroke="url(#pulso)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="0,16 28,16 40,7 52,25 64,16 96,16 108,5 120,27 132,16 168,16 180,9 192,23 204,16 240,16"/>
       </svg>
-      <p class="lead">Lee el chat en voz alta, agradece los regalos y pone en YouTube la canción que pide la gente. En Windows y en Mac también mueve tus animaciones de OBS.</p>
+      <p class="lead">Conectas el live de BIGO y abres el juego. Cuando entra el regalo que asignaste, el juego lo hace: un hongo, un arma, una vida o una lluvia de enemigos. En el teléfono, <strong>play</strong> y el título meten la canción en la cola.</p>
       <ul class="facts">
         <li><strong>10 días gratis</strong><span>Al crear la cuenta</span></li>
         <li><strong>Un solo pago</strong><span>30 días. No es suscripción</span></li>
@@ -61,17 +61,17 @@
     <section id="descargas">
       <div class="section-head">
         <h2>Descargas</h2>
-        <p class="section-lead">Versión <span data-version>2.2.0</span> para Windows y Android. Elige tu equipo.</p>
+        <p class="section-lead">Versión <span data-version>3.0.0</span> para Windows y Android. El archivo de Mac es el de antes.</p>
       </div>
       <div class="cards">
         <article class="card">
           <p class="kicker">Windows 10 y 11</p>
           <h3>Windows</h3>
-          <p>Voz, regalos, YouTube desde el chat y animaciones de OBS.</p>
+          <p>Aquí están los juegos. El instalador trae los scripts. Tú pones la ROM y eliges qué regalo dispara cada efecto.</p>
           <ul>
             <li>Windows 10 u 11, 64 bits</li>
             <li>Microsoft Edge. Si no está, Google Chrome</li>
-            <li>OBS Studio solo si usas animaciones</li>
+            <li>BizHawk para los juegos de cartucho. SMBX2 si juegas Super Mario Bros. X2</li>
           </ul>
           <div class="card-foot">
             <a class="btn btn-primary" data-enlace="windows" href="https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/windows/LivePulse-Setup.exe" download="LivePulse-Setup.exe">Descargar instalador</a>
@@ -85,7 +85,7 @@
         <article class="card">
           <p class="kicker">macOS</p>
           <h3>Mac</h3>
-          <p>Voz, regalos y YouTube desde el chat. La primera apertura pide un clic derecho. Este DMG no entra en la actualización de Windows ni de Android.</p>
+          <p>Este DMG no trae los juegos de la 3.0.0. Sigue leyendo el chat, los regalos y las canciones pedidas con play. La primera apertura pide un clic derecho.</p>
           <ul>
             <li>Mac Intel, o Apple Silicon con Rosetta</li>
             <li>Chrome para leer el live. Si no está, también Edge, Brave o Chromium</li>
@@ -100,7 +100,7 @@
         <article class="card">
           <p class="kicker">Android</p>
           <h3>Teléfono</h3>
-          <p>El mismo asistente en el bolsillo. No hace falta dejar el PC encendido.</p>
+          <p>Lee el chat, agradece el regalo y pone la canción. Los juegos de esta versión se juegan en Windows.</p>
           <ul>
             <li>Se instala este APK. No está en Play Store</li>
             <li>Usa las voces y los sonidos del teléfono</li>
@@ -113,22 +113,14 @@
           </div>
         </article>
       </div>
-      <h3 class="release-title">En esta versión</h3>
+      <h3 class="release-title">Novedades de la 3.0.0</h3>
       <ul class="release">
-        <li>En Windows, minimizar deja el live abierto. Cerrar con la X sí lo apaga.</li>
-        <li>En Windows, un pedido espera en la cola mientras otra canción suena. Si YouTube no reproduce un video, la cola sigue.</li>
-        <li>En Windows, si el video del overlay no se puede mostrar, queda la imagen y sin sonido.</li>
-        <li>En Windows, Eventos guarda el registro en Documentos y muestra la ruta.</li>
-        <li>En el teléfono, la búsqueda abre la primera canción que muestra YouTube y salta los Mix y los Shorts.</li>
-        <li>En Windows, el live se abre con Edge. Primero el de 64 bits, luego el de 32, y Chrome solo si no hay Edge.</li>
-        <li>En el teléfono y en Windows, la línea de tiempo del video sigue la canción mientras suena.</li>
-        <li>En Windows, el chat y los regalos siguen llegando aunque el live lleve un rato abierto.</li>
-        <li>En Windows y en el teléfono, la voz puede dejar de leer emojis y activar el anti-spam.</li>
-        <li>En Windows y en el teléfono, un comentario largo se lee hasta 80 palabras.</li>
-        <li>En Windows, el video y los regalos se pueden mostrar en un overlay y ocultarlos de la pantalla sin apagarlos en OBS.</li>
-        <li>En Windows y en el teléfono se puede usar LivePulse en español o en inglés.</li>
-        <li>En el teléfono, al volver de segundo plano Conectar vuelve a leer el live.</li>
-        <li>El portable se reemplaza. El instalador actualiza la copia de la PC.</li>
+        <li>En Windows, los scripts de los juegos vienen dentro del instalador y de la portable.</li>
+        <li>En Juegos asignas un regalo de BIGO a cada efecto. Cuando ese regalo entra al live, el juego lo hace.</li>
+        <li>Super Mario World, Super Mario Bros., Super Mario Bros. 3, Contra, Sunset Riders, Metal Slug y Metal Slug 2 corren en BizHawk. La ROM la copias tú en C:\LivePulse\roms.</li>
+        <li>Super Mario Bros. X2 usa el juego que ya tienes en C:\Games\SMBX2. LivePulse no lo descarga.</li>
+        <li>En el teléfono, play y el título dejan la canción en espera si ya hay otra sonando.</li>
+        <li>El archivo de Mac no cambia en esta versión.</li>
       </ul>
     </section>
 
@@ -143,8 +135,9 @@
           <ol>
             <li>Descarga el instalador y ábrelo.</li>
             <li>Si Windows muestra “protegió tu PC”, pulsa Más información y después Ejecutar de todas formas. El instalador no lleva una firma de pago.</li>
-            <li>Termina el asistente. Quedan iconos en el escritorio y en Inicio.</li>
+            <li>Termina la instalación. Quedan iconos en el escritorio y en Inicio.</li>
             <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
+            <li>En Juegos elige el título, indica tu ROM y asigna los regalos. BizHawk tiene que estar en la PC. Para Super Mario Bros. X2, el juego va en C:\Games\SMBX2.</li>
           </ol>
           <p class="note">La versión portable no se instala. Al abrirla crea la carpeta LivePulse-Data al lado del archivo. Puedes llevar las dos en un USB.</p>
         </article>
@@ -156,7 +149,7 @@
             <li>La primera vez, haz clic derecho en LivePulse y elige Abrir. macOS avisa porque la app no lleva una firma de pago. Pulsa Abrir.</li>
             <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
           </ol>
-          <p class="note">Sirve en Mac Intel y en Apple Silicon con Rosetta. Para leer el live hace falta Google Chrome. Si no está, también sirve Edge, Brave o Chromium ya instalados. OBS Studio solo si usas animaciones.</p>
+          <p class="note">Sirve en Mac Intel y en Apple Silicon con Rosetta. Para leer el live hace falta Google Chrome. Si no está, también sirve Edge, Brave o Chromium ya instalados. Este DMG no incluye los juegos de la 3.0.0.</p>
         </article>
         <article class="step">
           <h3>En Android</h3>
@@ -175,45 +168,37 @@
 
     <section id="que-hace">
       <div class="section-head">
-        <h2>Qué hace el asistente</h2>
-        <p class="section-lead">Chat, regalos, música y la cuenta.</p>
+        <h2>Los juegos y el live</h2>
+        <p class="section-lead">El regalo sale en BIGO. El efecto sale en la partida.</p>
       </div>
       <div class="feats">
         <article class="feat">
-          <h3>El chat</h3>
-          <p>Lee los comentarios en orden, con la voz del equipo. Si un emoji trae una letra, la dice. Si hay emojis antes del nombre, los salta y lee el nombre. Si la misma persona escribe seguido, dice su nombre una vez y junta los mensajes.</p>
+          <h3>Asignas el regalo</h3>
+          <p>En Juegos cada efecto tiene un regalo. Puedes dejar la Rosa en el hongo y otro regalo en la lluvia de enemigos. El precio y la espera los pones tú. Si llega el mismo regalo de la misma persona seguido, cuenta una vez.</p>
         </article>
         <article class="feat">
-          <h3>La voz</h3>
-          <p>Usa las voces que ya tienes en el PC o en el teléfono. Una pregunta suena como pregunta y una exclamación como exclamación.</p>
+          <h3>El live lo dispara</h3>
+          <p>Conectas el ID de BIGO y pulsas Iniciar. LivePulse escucha el chat. Cuando entra el regalo asignado, manda la orden al juego que está abierto y el efecto aparece en la partida.</p>
         </article>
         <article class="feat">
-          <h3>Los regalos</h3>
-          <p>Agradece los regalos del catálogo y también los que todavía no están listados. Los taps no se agradecen. Puede hacer sonar un efecto. Un combo de la misma persona cuenta como uno. También avisa seguidores nuevos y compartidos.</p>
+          <h3>Mario, Contra y los demás</h3>
+          <p>Super Mario World, Super Mario Bros. y Super Mario Bros. 3 sueltan hongos, flores, estrellas y enemigos. Contra, Sunset Riders, Metal Slug y Metal Slug 2 cambian el arma, sueltan bombas o dan una vida. Super Mario Bros. X2 hace lo mismo dentro de su propio juego.</p>
         </article>
         <article class="feat">
-          <h3>YouTube</h3>
-          <p>Alguien escribe <strong>play</strong> y el título en el chat. LivePulse busca la canción, la pone en cola y la reproduce. Al terminar, pasa a la siguiente y no deja YouTube con otro video. El volumen que dejas se conserva. Si escriben <strong>playlist</strong>, dice lo que sigue. El regalo Sonar ya corta la canción actual y pone la nueva. Al terminar, sigue la cola.</p>
+          <h3>La ROM es tuya</h3>
+          <p>LivePulse no trae ROM ni la descarga. La copias en C:\LivePulse\roms y la eliges en la ficha. Los scripts sí vienen con el programa. BizHawk es aparte, y Super Mario Bros. X2 tiene que estar en C:\Games\SMBX2.</p>
         </article>
         <article class="feat">
-          <h3>La música baja al hablar</h3>
-          <p>Mientras el asistente habla, puede bajar el volumen de YouTube y de los sonidos de regalos dentro de la app, y después lo devuelve. Tú puedes apagar esa opción.</p>
+          <h3>La canción</h3>
+          <p>En el chat escriben <strong>play</strong> y el título. LivePulse la busca y la pone a sonar. Si ya hay una, la nueva espera. <strong>playlist</strong> dice lo que sigue. Un regalo que marques como Sonar ya puede cortar la actual y poner la pedida.</p>
         </article>
         <article class="feat">
-          <h3>OBS</h3>
-          <p>En Windows y en Mac lanza animaciones en OBS cuando llega un regalo, un seguidor o un compartido. El teléfono no necesita OBS.</p>
-        </article>
-        <article class="feat">
-          <h3>El teléfono solo</h3>
-          <p>La APK no depende del PC. Entra al live desde el celular y puede seguir con la pantalla apagada si dejas la batería sin restricciones.</p>
+          <h3>Chat y regalos</h3>
+          <p>Los comentarios se leen en orden, con una voz del PC o del teléfono. Los regalos del catálogo se agradecen, y también los que todavía no están listados. Los taps no. En Windows y en Mac un regalo, un seguidor o un compartido puede lanzar una animación en OBS.</p>
         </article>
         <article class="feat">
           <h3>La cuenta</h3>
-          <p>10 días gratis al registrarte. En Perú el precio es de 16 soles, por Mercado Pago. En otros países son 6 dólares, por PayPal o Binance. El mismo correo entra en el PC, en el Mac y en el celular. El ID de BIGO queda ligado a esa cuenta durante 30 días.</p>
-        </article>
-        <article class="feat">
-          <h3>Avisos de versión</h3>
-          <p>La app revisa sola si hay una más nueva y te muestra el cartel para instalarla. El número de la versión queda abajo a la izquierda.</p>
+          <p>10 días gratis al registrarte. En Perú son 16 soles, por Mercado Pago. En otros países son 6 dólares, por PayPal o Binance. El mismo correo entra en el PC, en el Mac y en el celular.</p>
         </article>
       </div>
     </section>
@@ -221,8 +206,8 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>LivePulse</strong> · asistente en vivo para BIGO · Windows y Android <span data-version>2.2.0</span></p>
-      <p>Windows 10 u 11 de 64 bits, con Edge o Chrome. Mac Intel, o Apple Silicon con Rosetta, con Chrome, Edge, Brave o Chromium. Android mediante el APK de esta página.</p>
+      <p><strong>LivePulse</strong> · regalos del live dentro del juego · Windows y Android <span data-version>3.0.0</span></p>
+      <p>Windows 10 u 11 de 64 bits, con Edge o Chrome. Mac Intel, o Apple Silicon con Rosetta, con Chrome, Edge, Brave o Chromium. Android mediante el APK de esta página. El DMG de Mac no incluye los juegos de esta versión.</p>
     </div>
   </footer>
   <script src="sitio.js"></script>
