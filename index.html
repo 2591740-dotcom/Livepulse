@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LivePulse es el asistente virtual de tu live de BIGO. Lee el chat, agradece los regalos y pone la canción que piden.">
+  <meta name="description" content="LivePulse, asistente para tu live de BIGO. Lee el chat, agradece los regalos y pone la canción.">
   <meta name="theme-color" content="#070b12">
-  <title>LivePulse — Asistente virtual para tu live</title>
+  <title>LivePulse — Asistente para tu live</title>
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="estilos.css">
 </head>
@@ -34,7 +34,7 @@
   <main class="wrap" id="inicio">
     <section class="hero">
       <img class="hero-logo" src="img/logo.png" alt="LivePulse">
-      <p class="eyebrow">Asistente virtual para tu live</p>
+      <p class="eyebrow">Asistente para tu live</p>
       <h1>LivePulse</h1>
       <svg class="wave" viewBox="0 0 240 32" aria-hidden="true">
         <defs>
@@ -45,7 +45,7 @@
         </defs>
         <polyline fill="none" stroke="url(#pulso)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="0,16 28,16 40,7 52,25 64,16 96,16 108,5 120,27 132,16 168,16 180,9 192,23 204,16 240,16"/>
       </svg>
-      <p class="lead">Conectas tu live de BIGO y LivePulse se queda contigo. Lee el chat en voz alta, agradece los regalos y pone la canción que piden con <strong>play</strong>.</p>
+      <p class="lead">Asistente para tu live de BIGO. Lee el chat, agradece los regalos y pone la canción.</p>
       <ul class="facts">
         <li><strong>10 días gratis</strong><span>Al crear la cuenta</span></li>
         <li><strong>Un solo pago</strong><span>30 días. No es suscripción</span></li>
@@ -56,18 +56,19 @@
         <a class="btn btn-ghost" data-enlace="mac" href="https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/mac/LivePulse.dmg" download="LivePulse.dmg">Descargar para Mac</a>
         <a class="btn btn-ghost" data-enlace="android" href="https://raw.githubusercontent.com/2591740-dotcom/Livepulse/main/descargas/android/LivePulse.apk" download="LivePulse.apk">Descargar APK</a>
       </div>
+      <p class="safe">Si Windows muestra la pantalla azul por ser un software nuevo e independiente, haz clic en Más información y luego en Ejecutar de todas formas.</p>
     </section>
 
     <section id="descargas">
       <div class="section-head">
         <h2>Descargas</h2>
-        <p class="section-lead">Versión <span data-version>3.1.0</span> para Windows y Android. El archivo de Mac es el de antes.</p>
+        <p class="section-lead">Versión <span data-version>3.1.0</span>. Windows, Android y el Mac anterior.</p>
       </div>
       <div class="cards">
         <article class="card">
           <p class="kicker">Windows 10 y 11</p>
           <h3>Windows</h3>
-          <p>El asistente en la PC. Lee el chat, agradece los regalos y pone las canciones. Live desatendido deja un video base en OBS y, cuando llega un regalo, muestra la animación de ese regalo y vuelve al video base.</p>
+          <p>El asistente en la PC. Chat, regalos y canciones. Con OBS, el regalo muestra su animación y vuelve al video.</p>
           <ul>
             <li>Windows 10 u 11, 64 bits</li>
             <li>Microsoft Edge. Si no está, Google Chrome</li>
@@ -85,7 +86,7 @@
         <article class="card">
           <p class="kicker">macOS</p>
           <h3>Mac</h3>
-          <p>Este DMG es el de antes. No trae el live desatendido de la 3.1.0. Sigue leyendo el chat, los regalos y las canciones pedidas con play. La primera apertura pide un clic derecho.</p>
+          <p>Chat, regalos y canciones. Este archivo es el de antes. La primera vez, clic derecho y Abrir.</p>
           <ul>
             <li>Mac Intel, o Apple Silicon con Rosetta</li>
             <li>Chrome para leer el live. Si no está, también Edge, Brave o Chromium</li>
@@ -100,7 +101,7 @@
         <article class="card">
           <p class="kicker">Android</p>
           <h3>Teléfono</h3>
-          <p>El mismo asistente en el celular. Lee el chat, agradece el regalo y pone la canción.</p>
+          <p>El mismo asistente en el teléfono. Chat, regalos y canciones.</p>
           <ul>
             <li>Se instala este APK. No está en Play Store</li>
             <li>Usa las voces y los sonidos del teléfono</li>
@@ -115,84 +116,78 @@
       </div>
       <h3 class="release-title">Novedades de la 3.1.0</h3>
       <ul class="release">
-        <li>En Windows, Live desatendido deja un video base en OBS. Cuando llega un regalo, muestra la animación de ese regalo y, al terminar, vuelve al video base.</li>
-        <li>OBS tiene que estar abierto, con la fuente del video base elegida en esa pestaña.</li>
-        <li>En el teléfono no está Live desatendido. Sigue leyendo el chat, los regalos y las canciones.</li>
-        <li>El archivo de Mac no cambia en esta versión.</li>
+        <li>En Windows, un video base en OBS. El regalo muestra su animación y vuelve al video.</li>
+        <li>En el teléfono: chat, regalos y canciones.</li>
+        <li>El Mac no cambia.</li>
       </ul>
     </section>
 
     <section id="instalar">
       <div class="section-head">
         <h2>Instalar</h2>
-        <p class="section-lead">El mismo orden: Windows, Mac y Android.</p>
+        <p class="section-lead">Windows, Mac y Android.</p>
       </div>
       <div class="steps">
         <article class="step">
           <h3>En Windows</h3>
           <ol>
             <li>Descarga el instalador y ábrelo.</li>
-            <li>Si Windows muestra “protegió tu PC”, pulsa Más información y después Ejecutar de todas formas. El instalador no lleva una firma de pago.</li>
-            <li>Termina la instalación. Quedan iconos en el escritorio y en Inicio.</li>
-            <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
-            <li>Pulsa conectar. El asistente lee el chat, agradece los regalos y pone las canciones.</li>
+            <li>Si sale la pantalla azul, haz clic en Más información y luego en Ejecutar de todas formas.</li>
+            <li>Abre LivePulse, crea tu cuenta y conecta tu live.</li>
           </ol>
-          <p class="note">La versión portable no se instala. Al abrirla crea la carpeta LivePulse-Data al lado del archivo. Puedes llevar las dos en un USB.</p>
+          <p class="note">La portable no se instala. Crea la carpeta LivePulse-Data junto al archivo.</p>
         </article>
         <article class="step">
           <h3>En Mac</h3>
           <ol>
-            <li>Descarga LivePulse.dmg y ábrelo.</li>
-            <li>Arrastra LivePulse a la carpeta Aplicaciones.</li>
-            <li>La primera vez, haz clic derecho en LivePulse y elige Abrir. macOS avisa porque la app no lleva una firma de pago. Pulsa Abrir.</li>
-            <li>Abre LivePulse, crea tu cuenta y escribe el ID de tu live de BIGO.</li>
+            <li>Abre el DMG y arrastra LivePulse a Aplicaciones.</li>
+            <li>La primera vez, clic derecho y Abrir.</li>
+            <li>Crea tu cuenta y conecta tu live.</li>
           </ol>
-          <p class="note">Sirve en Mac Intel y en Apple Silicon con Rosetta. Para leer el live hace falta Google Chrome. Si no está, también sirve Edge, Brave o Chromium ya instalados. Este DMG no incluye el live desatendido de la 3.1.0.</p>
+          <p class="note">Mac Intel, o Apple Silicon con Rosetta. Hace falta Chrome, Edge, Brave o Chromium.</p>
         </article>
         <article class="step">
           <h3>En Android</h3>
           <ol>
-            <li>Abre esta página en el teléfono y descarga el APK.</li>
-            <li>Ábrelo desde el aviso o desde Descargas.</li>
-            <li>Si el teléfono lo pide, permite instalar aplicaciones desde el navegador o desde Archivos, solo para esta instalación.</li>
-            <li>Abre LivePulse, entra con tu cuenta y escribe tu ID de BIGO.</li>
-            <li>Si pregunta por la batería, permite que siga activa. Así lee el live con la pantalla apagada. Si la cierras desde las apps recientes, se detiene.</li>
+            <li>Descarga el APK y ábrelo.</li>
+            <li>Permite esta instalación si el teléfono lo pide.</li>
+            <li>Entra con tu cuenta y conecta tu live.</li>
           </ol>
-          <p class="note">No está en Play Store. El APK de esta página es la instalación.</p>
+          <p class="note">No está en Play Store. Si pregunta por la batería, déjala activa.</p>
         </article>
       </div>
-      <p class="note shared-note">El ID de BIGO queda ligado a tu cuenta durante 30 días. El mismo correo sirve en Windows, en el Mac y en el teléfono. La voz y los sonidos se guardan en cada aparato.</p>
+      <p class="note shared-note">El ID de BIGO queda en tu cuenta 30 días. El mismo correo entra en Windows, Mac y teléfono.</p>
     </section>
 
     <section id="que-hace">
       <div class="section-head">
         <h2>El asistente</h2>
-        <p class="section-lead">Conectas el live. LivePulse habla, agradece y pone la música.</p>
+        <p class="section-lead">Conectas el live. El asistente habla, agradece y pone la música.</p>
       </div>
       <div class="feats">
         <article class="feat">
           <h3>Lee el chat</h3>
-          <p>Los comentarios se leen en orden, con una voz del PC o del teléfono. Tú eliges la voz.</p>
+          <p>Lee los comentarios en orden. Tú eliges la voz.</p>
         </article>
         <article class="feat">
           <h3>Agradece los regalos</h3>
-          <p>Cuando llega un regalo, el asistente lo agradece en voz alta. También puede sonar un efecto para ese regalo.</p>
+          <p>Agradece el regalo en voz alta. Puede sonar un efecto.</p>
         </article>
         <article class="feat">
           <h3>Pone la canción</h3>
-          <p>En el chat escriben <strong>play</strong> y el título. LivePulse la busca y la pone. Si ya hay una, la nueva espera. <strong>playlist</strong> dice lo que sigue.</p>
+          <p><strong>play</strong> y el título. Si ya suena una, la nueva espera.</p>
         </article>
         <article class="feat">
           <h3>En Windows, con OBS</h3>
-          <p>Un regalo puede mostrar una animación. Live desatendido deja un video base y, al llegar un regalo, muestra la animación de ese regalo y vuelve al video base.</p>
+          <p>Video base. El regalo muestra su animación y vuelve al video.</p>
         </article>
         <article class="feat">
           <h3>También en el teléfono</h3>
-          <p>El APK lee el chat, agradece los regalos y pone las canciones. Live desatendido queda en Windows.</p>
+          <p>Chat, regalos y canciones. Las animaciones de OBS quedan en Windows.</p>
         </article>
         <article class="feat">
           <h3>La cuenta</h3>
-          <p>10 días gratis al registrarte. En Perú son 16 soles, por Mercado Pago. En otros países son 6 dólares, por PayPal o Binance. El mismo correo entra en el PC, en el Mac y en el celular.</p>
+          <p>10 días gratis. Luego 16 soles o 6 dólares, por 30 días.</p>
         </article>
       </div>
     </section>
@@ -200,8 +195,8 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>LivePulse</strong> · asistente virtual para tu live · Windows y Android <span data-version>3.1.0</span></p>
-      <p>Windows 10 u 11 de 64 bits, con Edge o Chrome. Mac Intel, o Apple Silicon con Rosetta, con Chrome, Edge, Brave o Chromium. Android mediante el APK de esta página. El archivo de Mac es el de antes.</p>
+      <p><strong>LivePulse</strong> · asistente para tu live · <span data-version>3.1.0</span></p>
+      <p>Windows 10 u 11. Mac con Rosetta. Android con el APK de esta página.</p>
     </div>
   </footer>
   <script src="sitio.js"></script>

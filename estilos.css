@@ -167,6 +167,14 @@ h1 {
 
 .actions .btn { white-space: nowrap; }
 
+.safe {
+  max-width: 640px;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
